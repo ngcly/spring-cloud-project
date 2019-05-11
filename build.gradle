@@ -25,6 +25,7 @@ apply plugin: 'com.palantir.docker'
 group = 'springio'
 
 bootJar {
+    archiveBaseName = "mydocker"
     version =  '0.1.0'
 }
 
@@ -35,7 +36,7 @@ task unpack(type: Copy) {
     into("build/dependency")
 }
 docker {
-    name "${project.group}/${bootJar.name}"
+    name "${project.group}/${bootJar.archiveBaseName}"
     copySpec.from(tasks.unpack.outputs).into("dependency")
     buildArgs(['DEPENDENCY': "dependency"])
 }
