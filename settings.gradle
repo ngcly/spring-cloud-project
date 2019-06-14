@@ -1,0 +1,6 @@
+rootProject.name = 'spring-cloud-project'
+include 'spring-cloud-eureka'
+include 'spring-cloud-zuul'
+include 'spring-cloud-config'
+include 'spring-cloud-user'
+
