@@ -16,6 +16,10 @@ spring:
     config:
       uri: http://localhost:8002
       name: config
+  security:
+    user:
+      name: ngcly
+      password: 123456
 
 eureka:
   client:
