@@ -1,0 +1,32 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: spring-cloud-config
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
+  #配置仓库
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        # 本地配置文件读取
+        native:
+          search-locations: classpath:config/
+          # git 远程读取
+#        git:
+#          uri: https://github.com/ngcly/spring-cloud-config
+#          search-paths: /configuration
+#          username: ngcly
+#          password: ngcly
+#      label: master
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ngcly:123456@127.0.0.1:8000/eureka/
+  instance:
+    prefer-ip-address: true

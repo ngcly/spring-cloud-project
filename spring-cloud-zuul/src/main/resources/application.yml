@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-cloud-zuul
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
+  zipkin:
+    base-url: http://localhost:8082
+  profiles:
+    active: native
+  cloud:
+    config:
+      uri: http://localhost:8002
+      name: config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ngcly:123456@localhost:8000/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    spring-cloud-user: /user/**

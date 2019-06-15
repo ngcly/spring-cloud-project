@@ -1,5 +1,9 @@
 dependencies {
-    implementation 'de.codecentric:spring-boot-admin-starter-client'
+    //Eureka服务端
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    //boot 客户端
+    implementation 'de.codecentric:spring-boot-admin-starter-client'
+    //zipkin 客户端
     implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+    implementation 'org.springframework.cloud:spring-cloud-starter-security'
 }
