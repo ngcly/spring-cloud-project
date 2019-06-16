@@ -12,13 +12,16 @@ spring:
     base-url: http://localhost:8082
   profiles:
     active: native
+  # config client 端必须用bootstrap 否则会被默认的给覆盖
   cloud:
     config:
-      uri: http://localhost:8002
+      discovery:
+        #表示使用服务发现组件的config serve，而不是自己指定的
+        enabled: true
+        #指定config serve的 service-id
+        service-id: spring-cloud-config
       name: config
-  security:
-    user:
-      name: ngcly
+      username: ngcly
       password: 123456
 
 eureka:

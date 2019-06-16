@@ -3,4 +3,5 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-config-server'
     implementation 'de.codecentric:spring-boot-admin-starter-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+    implementation 'org.springframework.cloud:spring-cloud-starter-security'
 }

@@ -17,16 +17,16 @@ spring:
         native:
           search-locations: classpath:config/
           # git 远程读取
-  security:
-    user:
-      name: ngcly
-      password: 123456
 #        git:
 #          uri: https://github.com/ngcly/spring-cloud-config
 #          search-paths: /configuration
 #          username: ngcly
 #          password: ngcly
 #      label: master
+  security:
+    user:
+      name: ngcly
+      password: 123456
 
 eureka:
   client:
