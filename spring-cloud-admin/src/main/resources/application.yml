@@ -1,0 +1,21 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: spring-cloud-admin
+  zipkin:
+    base-url: http://localhost:8003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ngcly:123456@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*' # health,info
