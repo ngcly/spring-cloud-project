@@ -6,7 +6,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8081
+        url: http://localhost:8001
   #配置仓库
   profiles:
     active: native
@@ -23,6 +23,7 @@ spring:
 #          username: ngcly
 #          password: ngcly
 #      label: master
+  #配置用户名密码 避免被直接访问查看配置信息
   security:
     user:
       name: ngcly
@@ -31,6 +32,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://ngcly:123456@127.0.0.1:8000/eureka/
+      defaultZone: http://ngcly:123456@localhost:8000/eureka/
   instance:
     prefer-ip-address: true

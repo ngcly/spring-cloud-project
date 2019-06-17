@@ -7,12 +7,14 @@ spring:
     user:
       name: ngcly
       password: 123456
+  #spring boot admin 服务地址
   boot:
     admin:
       client:
-        url: http://localhost:8081
+        url: http://localhost:8001
+  #zipkin 服务地址
   zipkin:
-    base-url: http://localhost:8082
+    base-url: http://spring-cloud-zipkin/
   profiles:
 
 eureka:

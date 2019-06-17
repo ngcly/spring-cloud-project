@@ -4,7 +4,7 @@ spring:
   application:
     name: spring-cloud-admin
   zipkin:
-    base-url: http://localhost:8003
+    base-url: http://spring-cloud-zipkin/
 eureka:
   client:
     service-url:
