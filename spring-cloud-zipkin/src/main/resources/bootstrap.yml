@@ -7,18 +7,9 @@ spring:
     admin:
       client:
         url: http://localhost:8001
-  # 解决Zipkin启动The bean 'characterEncodingFilter', defined in
-  main:
-    allow-bean-definition-overriding: true
 eureka:
   client:
     service-url:
       defaultZone: http://ngcly:123456@localhost:8000/eureka
   instance:
     prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
-management:
-  metrics:
-    web:
-      # 解决Zipkin报错IllegalArgumentException: Prometheus requires that all meters
-      server:
-        auto-time-requests: false

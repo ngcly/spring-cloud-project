@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8004
 
 spring:
   application:
@@ -21,9 +21,10 @@ spring:
         enabled: true
         #指定config serve的 service-id
         service-id: spring-cloud-config
-      name: config
+      name: application-zuul
       username: ngcly
       password: 123456
+      profile: dev
 
 eureka:
   client:
