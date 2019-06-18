@@ -7,7 +7,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8001
+        url: http://spring-cloud-admin
   # zipkin 服务地址 这里使用服务名 动态获取地址
   zipkin:
     base-url: http://spring-cloud-zipkin/
@@ -36,4 +36,4 @@ eureka:
 
 zuul:
   routes:
-    spring-cloud-user: /user/**
+    spring-cloud-user: /auth/**

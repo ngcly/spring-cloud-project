@@ -7,19 +7,17 @@ spring:
     user:
       name: ngcly
       password: 123456
-  #spring boot admin 服务地址
-  boot:
-    admin:
-      client:
-        url: http://localhost:8001
   #zipkin 服务地址
   zipkin:
     base-url: http://spring-cloud-zipkin/
   profiles:
 
 eureka:
+  instance:
+    # 指定主机名 不配置会报 Batch update failure with HTTP status code 401
+    hostname: localhost
   client:
     register-with-eureka: false # 是否注册自己的信息到EurekaServer，默认是true
     fetch-registry: false # 是否拉取其它服务的信息，默认是true
     service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
-      defaultZone: http://localhost:${server.port}/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

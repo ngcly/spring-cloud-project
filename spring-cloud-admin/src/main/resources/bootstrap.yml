@@ -5,12 +5,32 @@ spring:
     name: spring-cloud-admin
   zipkin:
     base-url: http://spring-cloud-zipkin/
+  #邮箱配置
+  mail:
+    host:
+    username:
+    password:
+  #邮件通知
+  boot:
+    admin:
+      notify:
+        mail:
+          to:
+
+  security:
+    user:
+      name: ngcly
+      password: 123456
 eureka:
   client:
     service-url:
       defaultZone: http://ngcly:123456@localhost:8000/eureka
   instance:
     prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
 management:
   endpoint:
     health:

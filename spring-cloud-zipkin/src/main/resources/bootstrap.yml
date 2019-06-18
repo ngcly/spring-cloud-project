@@ -6,7 +6,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8001
+        url: http://spring-cloud-admin/
 eureka:
   client:
     service-url:

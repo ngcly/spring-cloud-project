@@ -7,7 +7,6 @@ dependencies {
     implementation 'de.codecentric:spring-boot-admin-starter-client'
 
     implementation "io.zipkin.java:zipkin-server:${zipkinVersion}"
-//    implementation "io.zipkin.java:zipkin-autoconfigure-ui:${zipkinVersion}"
 //    implementation "io.zipkin.java:zipkin-autoconfigure-collector-rabbitmq:${zipkinVersion}"
 //    implementation "io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch:${zipkinVersion}"
 //

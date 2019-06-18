@@ -3,10 +3,11 @@ server:
 spring:
   application:
     name: spring-cloud-config
+  #spring boot admin 地址
   boot:
     admin:
       client:
-        url: http://localhost:8001
+        url: http://spring-cloud-admin/
   #配置仓库
   profiles:
     active: native
