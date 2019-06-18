@@ -6,16 +6,16 @@ spring:
   zipkin:
     base-url: http://spring-cloud-zipkin/
   #邮箱配置
-  mail:
-    host:
-    username:
-    password:
+#  mail:
+#    host:
+#    username:
+#    password:
   #邮件通知
-  boot:
-    admin:
-      notify:
-        mail:
-          to:
+#  boot:
+#    admin:
+#      notify:
+#        mail:
+#          to:
 
   security:
     user:
