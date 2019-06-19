@@ -1,5 +1,5 @@
 ext {
-    zipkinVersion = '2.12.9'
+    zipkinVersion = '2.12.8'
 }
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -10,6 +10,5 @@ dependencies {
     runtime "io.zipkin.java:zipkin-autoconfigure-ui:${zipkinVersion}"
 //    implementation "io.zipkin.java:zipkin-autoconfigure-collector-rabbitmq:${zipkinVersion}"
 //    implementation "io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch:${zipkinVersion}"
-//
 //    implementation "io.zipkin.java:zipkin-autoconfigure-storage-mysql:${zipkinVersion}"
 }
