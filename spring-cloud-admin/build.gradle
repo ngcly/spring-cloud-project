@@ -3,9 +3,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    
-    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
-    implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
     
     implementation 'de.codecentric:spring-boot-admin-starter-server'
 

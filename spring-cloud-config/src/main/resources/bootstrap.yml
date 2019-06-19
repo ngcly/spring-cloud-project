@@ -29,6 +29,12 @@ spring:
     user:
       name: ngcly
       password: 123456
+  # rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
@@ -36,3 +42,10 @@ eureka:
       defaultZone: http://ngcly:123456@localhost:8000/eureka/
   instance:
     prefer-ip-address: true
+
+#暴露bus-refresh接口用于更新git上的配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

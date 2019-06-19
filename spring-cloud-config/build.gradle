@@ -1,10 +1,14 @@
 dependencies {
+   // eureka 客户端
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    // 配置中心服务端
     implementation 'org.springframework.cloud:spring-cloud-config-server'
+    // spring boot admin 客户端
     implementation 'de.codecentric:spring-boot-admin-starter-client'
-
-    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
-    implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
-    
+    // 链路追踪 客户端
+    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+    // 安全配置
     implementation 'org.springframework.cloud:spring-cloud-starter-security'
+    // 配置bus 自动刷新
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
 }
