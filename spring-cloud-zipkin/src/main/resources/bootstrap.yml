@@ -13,3 +13,16 @@ eureka:
       defaultZone: http://ngcly:123456@localhost:8000/eureka
   instance:
     prefer-ip-address: true # 当其它服务获取地址时提供ip而不是hostname
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

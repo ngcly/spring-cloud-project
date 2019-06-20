@@ -1,5 +1,5 @@
 ext {
-    zipkinVersion = '2.12.8'
+    zipkinVersion = '2.12.3'
 }
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
