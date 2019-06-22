@@ -1,8 +1,8 @@
 server:
-  port: 8007
+  port: 8006
 spring:
   application:
-    name: spring-cloud-user
+    name: spring-cloud-auth
   boot:
     admin:
       client:
