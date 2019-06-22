@@ -21,7 +21,7 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 | spring-cloud-zuul | 8002 | 网关服务 |
 | spring-cloud-admin | 8003 | 监控中心 |
 | spring-cloud-zipkin | 8004 | 链路追踪 |
-| spring-cloud-turbine | 8005 | 断路聚合监控 |
+| spring-cloud-turbine | 8005 | 聚合监控 |
 | spring-cloud-common | 无 | 公共模块 |
 | spring-cloud-auth | 8006 | 授权服务 |
 | spring-cloud-user | 8007 | 用户服务 |
