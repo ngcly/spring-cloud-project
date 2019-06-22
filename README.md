@@ -16,9 +16,12 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 
 | 模块名称 | 端口号 | 功能 |
 |:--|:--|:--|
-| spring-cloud-zuul | 8004 | 布式微服务网关 |
-| spring-cloud-auth | 8005 | 授权服务 |
-| spring-cloud-eureka | 8000 | 分布式微服务注册中心 |
-| spring-cloud-admin | 8001 | spring boot admin 服务监控中心 |
-| spring-cloud-config | 8002 | 分布式微服务配置中心 |
-| spring-cloud-zipkin | 8003 | 分布式微服务链路追踪 |
+| spring-cloud-eureka | 8000 | 注册中心 |
+| spring-cloud-config | 8001 | 配置中心 |
+| spring-cloud-zuul | 8002 | 网关服务 |
+| spring-cloud-admin | 8003 | 监控中心 |
+| spring-cloud-zipkin | 8004 | 链路追踪 |
+| spring-cloud-turbine | 8005 | 断路聚合监控 |
+| spring-cloud-common | 无 | 公共模块 |
+| spring-cloud-auth | 8006 | 授权服务 |
+| spring-cloud-user | 8007 | 用户服务 |

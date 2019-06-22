@@ -1,8 +1,8 @@
 server:
-  port: 8006
+  port: 8005
 spring:
   application:
-    name: spring-cloud-auth
+    name: spring-cloud-turbine
 
 eureka:
   client:

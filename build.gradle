@@ -41,7 +41,10 @@ subprojects {
 
     ext {
         springBootAdminVersion = '2.1.5'
-        springCloudVersion = 'Greenwich.SR1'
+        springCloudVersion = 'Greenwich.SR2'
+
+        swaggerVersion = '2.9.2'
+        druidVersion = '1.1.17'
     }
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
