@@ -5,8 +5,13 @@ dependencies {
     implementation 'de.codecentric:spring-boot-admin-starter-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
 
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+
     implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
 
+    implementation "mysql:mysql-connector-java"
+    implementation "com.alibaba:druid-spring-boot-starter:${druidVersion}"
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 }

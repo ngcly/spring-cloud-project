@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: spring-cloud-auth
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   boot:
     admin:
       client:
@@ -20,7 +25,7 @@ spring:
         enabled: true
         #指定config serve的 service-id
         service-id: spring-cloud-config
-      name: application-zuul
+      name: application-config
       username: ngcly
       password: 123456
       profile: dev

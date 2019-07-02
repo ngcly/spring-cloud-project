@@ -16,12 +16,12 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 
 | 模块名称 | 端口号 | 功能 |
 |:--|:--|:--|
-| spring-cloud-eureka | 8000 | 注册中心 |
-| spring-cloud-config | 8001 | 配置中心 |
-| spring-cloud-zuul | 8002 | 网关服务 |
-| spring-cloud-admin | 8003 | 监控中心 |
-| spring-cloud-zipkin | 8004 | 链路追踪 |
-| spring-cloud-turbine | 8005 | 聚合监控 |
-| spring-cloud-common | 无 | 公共模块 |
-| spring-cloud-auth | 8006 | 授权服务 |
-| spring-cloud-user | 8007 | 用户服务 |
+| spring-cloud-eureka | 8000 | [注册中心](./spring-cloud-eureka/README.md) |
+| spring-cloud-config | 8001 | [配置中心](./spring-cloud-config/README.md) |
+| spring-cloud-zuul | 8002 | [网关服务](./spring-cloud-zuul/README.md) |
+| spring-cloud-admin | 8003 | [监控中心](./spring-cloud-admin/README.md) |
+| spring-cloud-zipkin | 8004 | [链路追踪](./spring-cloud-zipkin/README.md) |
+| spring-cloud-turbine | 8005 | [聚合监控](./spring-cloud-turbine/README.md) |
+| spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |
+| spring-cloud-auth | 8006 | [授权服务](./spring-cloud-auth/README.md) |
+| spring-cloud-user | 8007 | [用户服务](./spring-cloud-user/README.md) |
