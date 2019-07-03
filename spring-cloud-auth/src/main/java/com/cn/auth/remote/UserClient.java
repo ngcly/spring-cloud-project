@@ -2,6 +2,9 @@ package com.cn.auth.remote;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @author chenning
@@ -11,9 +14,15 @@ import org.springframework.stereotype.Service;
  */
 @FeignClient(name = "spring-cloud-user", fallback = UserClient.UserClientFallback.class)
 public interface UserClient {
+    @GetMapping("/user/info/{username}")
+    ModelMap getUserByUsername(@PathVariable("username") String username);
 
     @Service
     class UserClientFallback implements UserClient{
 
+        @Override
+        public ModelMap getUserByUsername(String username) {
+            return null;
+        }
     }
 }
