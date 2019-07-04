@@ -1,6 +1,8 @@
 package com.cn.auth.service;
 
 import com.cn.auth.remote.UserClient;
+import com.cn.common.pojo.Result;
+import com.cn.common.pojo.UserDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,6 +27,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Result<UserDetail> result = userClient.getUserByUsername(username);
+        if(null==result.getData()){
+            throw new UsernameNotFoundException("用户：" + username + "不存在！");
+        }
         Collection<GrantedAuthority> authorities = new HashSet<>();
         User user = new User("","",authorities);
         return user;

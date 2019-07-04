@@ -1,9 +1,8 @@
 package com.cn.user.controller;
 
-import com.cn.user.entity.User;
+import com.cn.common.pojo.Result;
 import com.cn.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +21,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping("info/{username}")
-    public ModelMap getUser(@PathVariable("username")String username){
-        ModelMap modelMap = new ModelMap();
-        modelMap.put("data",userService.getUser(username));
-        return modelMap;
+    public Result getUser(@PathVariable("username")String username){
+        return userService.getUser(username);
     }
 }
