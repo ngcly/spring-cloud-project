@@ -1,7 +1,7 @@
 package com.cn.auth.remote;
 
 import com.cn.common.pojo.Result;
-import com.cn.common.pojo.UserDetail;
+import com.cn.common.pojo.UserDO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface UserClient {
 
     @GetMapping("/user/info/{username}")
-    Result<UserDetail> getUserByUsername(@PathVariable("username") String username);
+    Result<UserDO> getUserByUsername(@PathVariable("username") String username);
 
     @Service
     class UserClientFallback implements UserClient{

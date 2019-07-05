@@ -1,9 +1,9 @@
 spring:
   rabbitmq:
-    host: 192.168.1.200
+    host: localhost
     port: 5672
-    username: admin
-    password: admin
+    username: guest
+    password: guest
   datasource:
     druid:
       #JDBC配置
@@ -50,7 +50,7 @@ spring:
         #监控单个url调用的sql列表
         profile-enable: true
       #spring监控配置，多个使用,隔开
-      aop-patterns: com.lion.auth.*
+      aop-patterns: com.cn.repository.*
       filter:
         #慢SQL记录
         stat:
