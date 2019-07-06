@@ -1,3 +1,6 @@
+group 'com.cn.auth'
+description '授权模块'
+
 dependencies {
     implementation project(':spring-cloud-common')
     

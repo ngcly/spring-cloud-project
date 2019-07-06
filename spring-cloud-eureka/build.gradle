@@ -1,3 +1,6 @@
+group 'com.cn.eureka'
+description '注册中心'
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     //Eureka服务端

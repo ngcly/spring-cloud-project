@@ -1,3 +1,6 @@
+group 'com.cn.config'
+description '配置模块'
+
 dependencies {
    // eureka 客户端
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'

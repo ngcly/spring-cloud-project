@@ -1,8 +1,9 @@
+group 'com.cn.user'
+description '用户模块'
 
 dependencies {
     implementation project(':spring-cloud-common')
     
-    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'de.codecentric:spring-boot-admin-starter-client'

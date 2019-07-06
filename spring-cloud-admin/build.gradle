@@ -1,3 +1,6 @@
+group 'com.cn.admin'
+description 'spring boot admin 监控模块'
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-mail'

@@ -20,11 +20,11 @@ buildscript { //构建脚本
 allprojects {
     apply plugin: 'idea'
     apply plugin: 'java'
-    idea {
-        module {
-            inheritOutputDirs = true
-        }
-    }
+//    idea {
+//        module {
+//            inheritOutputDirs = true
+//        }
+//    }
 }
 
 subprojects {

@@ -1,6 +1,10 @@
+group 'com.cn.zipkin'
+description '链路追踪模块'
+
 ext {
     zipkinVersion = '2.12.3'
 }
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
