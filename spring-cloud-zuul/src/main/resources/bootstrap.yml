@@ -26,6 +26,16 @@ spring:
       password: 123456
       profile: dev
 
+security:
+  oauth2:
+    client:
+      client-id: cloud_client
+      access-token-uri: http://localhost:${server.port}/auth/oauth/token
+      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:${server.port}/auth/user/principal
+      prefer-token-info: false
+
 eureka:
   client:
     service-url:
@@ -34,6 +44,6 @@ eureka:
   instance:
     prefer-ip-address: true
 
-zuul:
-  routes:
-    spring-cloud-user: /auth/**
+#zuul:
+#  routes:
+#    spring-cloud-user: /auth/**
