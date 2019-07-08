@@ -29,7 +29,6 @@ import javax.sql.DataSource;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
-    @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
     @Autowired
@@ -75,15 +74,16 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 //配置以生效password模式
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsService)
-                .tokenServices(tokenServices);
+                .tokenServices(tokenServices)
+                .exceptionTranslator(new ExceptionTranslatorImpl());
     }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         //允许表单认证
-        security.allowFormAuthenticationForClients()
-                .tokenKeyAccess("permitAll()")
-                .checkTokenAccess("permitAll()");
+        security.tokenKeyAccess("permitAll()")
+                .checkTokenAccess("permitAll()")
+                .allowFormAuthenticationForClients();
     }
 
 }

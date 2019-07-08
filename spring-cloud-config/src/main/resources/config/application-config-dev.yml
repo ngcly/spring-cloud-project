@@ -63,8 +63,8 @@ spring:
           enabled: true
           db-type: mysql
           config:
-            alter-table-allow: false
-            truncate-allow: false
+            alter-table-allow: true
+            truncate-allow: true
             drop-table-allow: false
             #是否允许非以上基本语句的其他语句，缺省关闭，通过这个选项就能够屏蔽DDL
             none-base-statement-allow: false

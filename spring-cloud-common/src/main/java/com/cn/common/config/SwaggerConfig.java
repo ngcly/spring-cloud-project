@@ -4,14 +4,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.OAuthBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
+import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger.web.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author chenning
@@ -24,6 +28,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     @Value("${spring.application.name}")
     public String application;
+    @Value("${security.oauth2.client.access-token-uri}")
+    private String AUTH_SERVER;
 
     @Bean
     public Docket api() {
@@ -33,7 +39,9 @@ public class SwaggerConfig {
                 //设置包路径
                 .apis(RequestHandlerSelectors.basePackage("com.cn.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .securityContexts(Collections.singletonList(securityContext()))
+                .securitySchemes(Collections.singletonList(securityScheme()));
     }
 
     private ApiInfo apiInfo() {
@@ -64,4 +72,38 @@ public class SwaggerConfig {
         return UiConfigurationBuilder.builder().docExpansion(DocExpansion.LIST).operationsSorter(OperationsSorter.ALPHA)
                 .defaultModelRendering(ModelRendering.MODEL).build();
     }
+
+    /**
+     * 这个类决定了你使用哪种认证方式，我这里使用密码模式
+     * 其他方式自己摸索一下，完全莫问题啊
+     */
+    private SecurityScheme securityScheme() {
+        GrantType grantType = new ResourceOwnerPasswordCredentialsGrant(AUTH_SERVER);
+
+        return new OAuthBuilder()
+                .name("Oauth2")
+                .grantTypes(Collections.singletonList(grantType))
+                .scopes(Arrays.asList(scopes()))
+                .build();
+    }
+
+    /**
+     * 这里设置 swagger2 认证的安全上下文
+     */
+    private SecurityContext securityContext() {
+        return SecurityContext.builder()
+                .securityReferences(Collections.singletonList(new SecurityReference("Oauth2", scopes())))
+                .forPaths(PathSelectors.any())
+                .build();
+    }
+
+    /**
+     * 这里是写允许认证的scope
+     */
+    private AuthorizationScope[] scopes() {
+        return new AuthorizationScope[]{
+                new AuthorizationScope("all", "All scope is trusted!")
+        };
+    }
+
 }

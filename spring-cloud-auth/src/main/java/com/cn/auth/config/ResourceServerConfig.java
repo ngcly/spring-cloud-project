@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author chenning
  * @Classname ResourceServerConfig
- * @Description 资源服务
+ * @Description 静态资源配置
  * @Date 2019/6/25 16:42
  */
 @Configuration

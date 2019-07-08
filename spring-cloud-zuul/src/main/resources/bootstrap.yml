@@ -44,6 +44,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-#zuul:
-#  routes:
-#    spring-cloud-user: /auth/**
+zuul:
+  routes:
+    spring-cloud-auth: /auth/**
+    spring_cloud-user: /user/**
