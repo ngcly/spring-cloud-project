@@ -1,6 +1,5 @@
 package com.cn.user.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +31,6 @@ public class User implements Serializable {
     private Integer id ;
     @Column(name="username",unique = true)
     private String username;       //用户名
-    @JsonIgnore
     private String password;       //密码
     private String nickName;       //昵称
     private Byte gender ;          //性别
