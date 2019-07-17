@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: spring-cloud-zuul
+    name: spring-cloud-gateway
   boot:
     admin:
       client:
@@ -15,6 +15,26 @@ spring:
     active: native
   # config client 端必须用bootstrap 否则会被默认的给覆盖
   cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: spring-cloud-auth
+          #开头（lb代表从注册中心获取服务） 要转发的的服务地址
+          uri: lb://spring-cloud-auth
+          predicates:
+            - Path=/ah/**
+          filters:
+            - StripPrefix=1
+        - id: spring-cloud-user
+          uri: lb://spring-cloud-user
+          predicates:
+            - Path=/us/**
+          filters:
+            - StripPrefix=1
+
     config:
       discovery:
         #表示使用服务发现组件的config serve，而不是自己指定的
@@ -26,17 +46,6 @@ spring:
       password: 123456
       profile: dev
 
-security:
-  oauth2:
-    client:
-      client-id: cloud_client
-      client-secret: secret
-      access-token-uri: http://localhost:${server.port}/auth/oauth/token
-      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
-    resource:
-      user-info-uri: http://localhost:${server.port}/auth/user/principal
-      prefer-token-info: false
-
 eureka:
   client:
     service-url:
@@ -44,10 +53,3 @@ eureka:
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
-
-zuul:
-  routes:
-    spring-cloud-auth:
-      path: /auth/**
-      sensitiveHeaders:
-    spring-cloud-user: /user/**
