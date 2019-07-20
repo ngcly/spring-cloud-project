@@ -2,8 +2,9 @@ group 'com.cn.common'
 description '通用模块'
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    //implementation 表示当前依赖对其他模块不可见，apiElements 对其他模块可见
+    apiElements 'org.springframework.boot:spring-boot-starter-web'
     
-    implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
-    implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+    apiElements "io.springfox:springfox-swagger2:${swaggerVersion}"
+    apiElements "io.springfox:springfox-swagger-ui:${swaggerVersion}"
 }
