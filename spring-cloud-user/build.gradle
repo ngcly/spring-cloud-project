@@ -2,8 +2,9 @@ group 'com.cn.user'
 description '用户模块'
 
 dependencies {
+    //implementation 不能传递依赖
     implementation project(':spring-cloud-common')
-    
+
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'de.codecentric:spring-boot-admin-starter-client'

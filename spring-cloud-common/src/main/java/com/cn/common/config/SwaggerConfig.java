@@ -26,7 +26,6 @@ import java.util.Collections;
  */
 @Configuration
 @EnableSwagger2
-@PropertySource("classpath:swagger.properties")
 public class SwaggerConfig {
     @Value("${spring.application.name}")
     public String application;
@@ -65,12 +64,6 @@ public class SwaggerConfig {
                 .contact(new Contact("ngcly", "https://github.com/ngcly", "531237716@qq.com"))
                 .version("1.0")
                 .build();
-    }
-
-    @Bean
-    UiConfiguration uiConfig() {
-        return UiConfigurationBuilder.builder().docExpansion(DocExpansion.LIST).operationsSorter(OperationsSorter.ALPHA)
-                .defaultModelRendering(ModelRendering.MODEL).build();
     }
 
 //    /**

@@ -6,6 +6,7 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @Description token 过滤器
  * @Date 2019/7/6 17:18
  */
+//@Component
 public class TokenFilter extends ZuulFilter {
     @Override
     public String filterType() {
