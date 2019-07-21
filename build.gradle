@@ -20,6 +20,8 @@ buildscript { //构建脚本
 allprojects {
     apply plugin: 'idea'
     apply plugin: 'java'
+    // 解决api命令报错问题
+    apply plugin: 'java-library'
 //    idea {
 //        module {
 //            inheritOutputDirs = true

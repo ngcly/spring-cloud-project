@@ -1,5 +1,6 @@
 package com.cn.common.config;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,7 +37,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //设置包路径
-                .apis(RequestHandlerSelectors.basePackage("com.cn.controller"))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .paths(PathSelectors.any())
                 .build();
 //                .securityContexts(Collections.singletonList(securityContext()))
@@ -65,7 +66,7 @@ public class SwaggerConfig {
                 .version("1.0")
                 .build();
     }
-
+//
 //    /**
 //     * 这个类决定了使用哪种认证方式，这里使用密码模式
 //     */
