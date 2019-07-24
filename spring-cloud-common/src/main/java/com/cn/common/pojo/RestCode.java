@@ -21,6 +21,7 @@ public enum RestCode {
     HEAD_ERROR(415, "头部不匹配"),
     METHOD_ERROR(405 ,"不支持该请求方式"),
     SERVER_ERROR(500, "服务异常"),
+    SERVER_HYSTRIX(501,"服务熔断"),
     FILE_UPLOAD_ERR(611,"文件上传失败");
 
     public int code;

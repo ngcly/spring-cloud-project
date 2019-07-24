@@ -21,7 +21,7 @@ spring:
         enabled: true
         #指定config serve的 service-id
         service-id: spring-cloud-config
-      name: application-zuul
+      name: application-gateway
       username: ngcly
       password: 123456
       profile: dev

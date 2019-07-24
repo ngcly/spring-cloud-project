@@ -21,6 +21,7 @@ spring:
           enabled: true
           lowerCaseServiceId: true
       routes:
+        #随便命名 必须保证唯一
         - id: spring-cloud-auth
           #开头（lb代表从注册中心获取服务） 要转发的的服务地址
           uri: lb://spring-cloud-auth
@@ -28,12 +29,22 @@ spring:
             - Path=/ah/**
           filters:
             - StripPrefix=1
+            # 熔断降级配置
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: forward:/defaultFallback
         - id: spring-cloud-user
           uri: lb://spring-cloud-user
           predicates:
             - Path=/us/**
           filters:
             - StripPrefix=1
+            # 熔断降级配置
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: forward:/defaultFallback
 
     config:
       discovery:
@@ -41,11 +52,12 @@ spring:
         enabled: true
         #指定config serve的 service-id
         service-id: spring-cloud-config
-      name: application-zuul
+      name: application-gateway,application-config
       username: ngcly
       password: 123456
       profile: dev
 
+#注册中心
 eureka:
   client:
     service-url:
@@ -53,3 +65,7 @@ eureka:
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
