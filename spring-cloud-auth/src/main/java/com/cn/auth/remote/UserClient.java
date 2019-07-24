@@ -24,7 +24,7 @@ public interface UserClient {
 
         @Override
         public Result getUserByUsername(String username) {
-            return Result.failure(501,"用户服务熔断降级");
+            return Result.failure(503,"用户服务熔断降级");
         }
     }
 }

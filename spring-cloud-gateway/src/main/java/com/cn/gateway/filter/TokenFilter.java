@@ -3,6 +3,8 @@ package com.cn.gateway.filter;
 import java.util.List;
 import java.util.Map;
 
+import com.cn.common.exception.GlobalException;
+import com.cn.common.pojo.RestCode;
 import com.cn.gateway.remote.AuthClient;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +50,10 @@ public class TokenFilter implements GlobalFilter, Ordered {
 
         //远程调用授权服务校验token是否失效
         Map<String,?> checkToken = authClient.checkToken(accessToken);
+        //授权服务不可用
+        if(checkToken == null){
+            throw new GlobalException(503,"授权服务熔断");
+        }
         if(!Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){
             //Token已失效
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);

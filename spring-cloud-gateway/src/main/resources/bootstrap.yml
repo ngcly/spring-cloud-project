@@ -66,6 +66,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
+#gateway 此处必须要设为true feign才会熔断
 feign:
   hystrix:
     enabled: true

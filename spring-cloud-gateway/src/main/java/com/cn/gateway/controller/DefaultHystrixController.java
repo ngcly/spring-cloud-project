@@ -16,6 +16,6 @@ public class DefaultHystrixController {
 
     @RequestMapping("/defaultFallback")
     public Result fallback(){
-        return Result.failure(RestCode.SERVER_HYSTRIX);
+        return Result.failure(RestCode.SERVICE_UNAVAILABLE);
     }
 }
