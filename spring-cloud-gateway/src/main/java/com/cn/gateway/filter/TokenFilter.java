@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.server.ServerWebExchange;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
@@ -43,24 +44,22 @@ public class TokenFilter implements GlobalFilter, Ordered {
 
         String accessToken = extractToken(exchange.getRequest());
 
-        if(StringUtils.isEmpty(accessToken)){
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
-        }
+        if(StringUtils.isNotEmpty(accessToken)){
+            //远程调用授权服务校验token是否失效
+            Map<String,?> checkToken = authClient.checkToken(accessToken);
 
-        //远程调用授权服务校验token是否失效
-        Map<String,?> checkToken = authClient.checkToken(accessToken);
-        //授权服务不可用
-        if(checkToken == null){
-            throw new GlobalException(503,"授权服务熔断");
+            if(checkToken!=null){
+                if(Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){
+                    //Token有效
+                    return chain.filter(exchange);
+                }
+            }else {
+                throw new GlobalException(503,"授权服务熔断");
+            }
         }
-        if(!Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){
-            //Token已失效
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
-        }
-
-        return chain.filter(exchange);
+        //网关拒绝，返回401
+        exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+        return exchange.getResponse().writeWith(Flux.error(new GlobalException(RestCode.UNAUTHEN)));
     }
 
     @Override
@@ -81,8 +80,6 @@ public class TokenFilter implements GlobalFilter, Ordered {
                 authToken = strings.get(0);
             }
         }
-
         return authToken;
     }
-
 }
