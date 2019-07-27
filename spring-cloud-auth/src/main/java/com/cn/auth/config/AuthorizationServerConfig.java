@@ -49,12 +49,18 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return new JdbcClientDetailsService(dataSource);
     }
 
+    /**
+     * 用来配置客户端详情信息，一般使用数据库来存储或读取应用配置的详情信息（client_id ，client_secret，redirect_uri 等配置信息）。
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         // 通过jdbc去查询数据库oauth_client_details表验证clientId信息
         clients.withClientDetails(clientDetails());
     }
 
+    /**
+     * 配置我们的Token存放方式 Redis方式
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         // 配置tokenServices参数
