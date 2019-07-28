@@ -3,7 +3,10 @@ package com.cn.auth.controller;
 import com.cn.common.pojo.RestCode;
 import com.cn.common.pojo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +30,13 @@ public class AuthController {
     @RequestMapping("/principal")
     public Principal principal(Principal principal) {
         return principal;
+    }
+
+    @GetMapping("/info")
+    public Result<User> getUserInfo(Principal principal){
+        Authentication authentication = (Authentication) principal;
+        User user = (User) authentication.getPrincipal();
+        return Result.success(user);
     }
 
     /**

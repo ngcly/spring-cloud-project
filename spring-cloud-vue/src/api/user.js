@@ -2,17 +2,16 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/oauth/token',
+    url: '/ah/oauth/token',
     method: 'post',
-    data
+    params: data
   })
 }
 
-export function getInfo(token) {
+export function getInfo() {
   return request({
-    url: '/user/info',
-    method: 'get',
-    params: { token }
+    url: '/ah/user/info',
+    method: 'get'
   })
 }
 

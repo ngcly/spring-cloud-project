@@ -4,7 +4,7 @@ import { resetRouter } from '@/router'
 
 const state = {
   token: getToken(),
-  name: '',
+  username: '',
   avatar: ''
 }
 
@@ -12,8 +12,8 @@ const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token
   },
-  SET_NAME: (state, name) => {
-    state.name = name
+  SET_NAME: (state, username) => {
+    state.username = username
   },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
@@ -25,10 +25,12 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      login({ username: username.trim(), password: password, scope: 'all', grant_type: 'password',
+        client_id: 'cloud_client', client_secret: 'secret' }).then(response => {
         const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
+        console.log(data)
+        commit('SET_TOKEN', 'bearer a841b7e1-dd70-4fd7-a131-c29bd6442d90')
+        setToken('bearer a841b7e1-dd70-4fd7-a131-c29bd6442d90')
         resolve()
       }).catch(error => {
         reject(error)
@@ -37,18 +39,18 @@ const actions = {
   },
 
   // get user info
-  getInfo({ commit, state }) {
+  getInfo({ commit }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.token).then(response => {
+      getInfo().then(response => {
         const { data } = response
 
         if (!data) {
           reject('Verification failed, please Login again.')
         }
 
-        const { name, avatar } = data
+        const { username, avatar } = data
 
-        commit('SET_NAME', name)
+        commit('SET_NAME', username)
         commit('SET_AVATAR', avatar)
         resolve(data)
       }).catch(error => {

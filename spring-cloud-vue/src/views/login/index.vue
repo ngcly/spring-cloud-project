@@ -75,11 +75,7 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '123456',
-        scope: 'all',
-        grant_type: 'password',
-        client_id: 'cloud_client',
-        client_secret: 'secret'
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],

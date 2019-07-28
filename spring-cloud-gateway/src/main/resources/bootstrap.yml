@@ -16,6 +16,13 @@ spring:
   # config client 端必须用bootstrap 否则会被默认的给覆盖
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - OPTION
+              - POST
       discovery:
         locator:
           enabled: true
