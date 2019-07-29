@@ -25,12 +25,11 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password, scope: 'all', grant_type: 'password',
-        client_id: 'cloud_client', client_secret: 'secret' }).then(response => {
+      login({ username: username.trim(), password: password}).then(response => {
         const { data } = response
         console.log(data)
-        commit('SET_TOKEN', 'bearer a841b7e1-dd70-4fd7-a131-c29bd6442d90')
-        setToken('bearer a841b7e1-dd70-4fd7-a131-c29bd6442d90')
+        commit('SET_TOKEN', data.token)
+        setToken(data.token)
         resolve()
       }).catch(error => {
         reject(error)

@@ -37,8 +37,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         //获取当前请求的url，/oauth/token 为init请求 设置为白名单
-        if(pathMatcher.match("/**/oauth/token/**",exchange.getRequest().getPath().value())
-                ||pathMatcher.match("/**/v2/api-docs/**",exchange.getRequest().getPath().value())){
+        if(pathMatcher.match("/**/v2/api-docs/**",exchange.getRequest().getPath().value())){
             return chain.filter(exchange);
         }
 
