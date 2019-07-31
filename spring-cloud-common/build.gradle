@@ -7,4 +7,7 @@ dependencies {
     
     api "io.springfox:springfox-swagger2:${swaggerVersion}"
     api "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+
+    api "com.alibaba:fastjson:1.2.58"
+
 }

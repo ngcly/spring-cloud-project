@@ -1,14 +1,13 @@
 package com.cn.auth.controller;
 
+import com.cn.auth.pojo.UserDetail;
 import com.cn.common.pojo.RestCode;
 import com.cn.common.pojo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -33,19 +32,18 @@ public class AuthController {
     }
 
     @GetMapping("/info")
-    public Result<User> getUserInfo(Principal principal){
+    public Result<UserDetail> getUserInfo(Principal principal){
         Authentication authentication = (Authentication) principal;
-        User user = (User) authentication.getPrincipal();
+        UserDetail user = (UserDetail) authentication.getPrincipal();
         return Result.success(user);
     }
 
     /**
      * 销毁token
-     * @param access_token
-     * @return
      */
     @RequestMapping(value = "/revoke")
-    public Result revoke(String access_token) {
+    public Result revoke(@RequestBody ModelMap modelMap) {
+        String access_token = modelMap.get("token").toString().substring("Bearer".length()).trim();
         return consumerTokenServices.revokeToken(access_token)?Result.success():Result.failure(RestCode.SERVER_ERROR);
     }
 }

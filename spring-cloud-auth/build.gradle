@@ -1,6 +1,11 @@
 group 'com.cn.auth'
 description '授权模块'
 
+//热部署会导致类型强制转换错误
+configurations {
+    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-devtools'
+}
+
 dependencies {
     implementation project(':spring-cloud-common')
     

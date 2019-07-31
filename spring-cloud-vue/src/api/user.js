@@ -15,9 +15,10 @@ export function getInfo() {
   })
 }
 
-export function logout() {
+export function logout(data) {
   return request({
-    url: '/user/logout',
-    method: 'post'
+    url: '/ah/user/revoke',
+    method: 'post',
+    data
   })
 }
