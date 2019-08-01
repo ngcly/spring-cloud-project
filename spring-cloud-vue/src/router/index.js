@@ -5,6 +5,7 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
+import { swagger } from '@/api/constant'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -72,13 +73,13 @@ export const constantRoutes = [
         path: 'admin',
         name: 'Admin',
         component: () => import('@/views/monitor/admin'),
-        meta: { title: '应用监控', icon: 'chart' }
+        meta: { title: '应用监控', icon: 'example' }
       },
       {
         path: 'hystrix',
         name: 'Hystrix',
         component: () => import('@/views/monitor/hystrix'),
-        meta: { title: '熔断监控', icon: 'lock' }
+        meta: { title: '熔断监控', icon: 'eye-open' }
       },
       {
         path: 'zipkin',
@@ -94,8 +95,8 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: swagger,
+        meta: { title: 'API文档', icon: 'link' }
       }
     ]
   },

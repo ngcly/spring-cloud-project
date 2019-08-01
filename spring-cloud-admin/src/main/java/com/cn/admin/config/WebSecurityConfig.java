@@ -32,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage( adminContextPath + "/login" ).successHandler( successHandler ).and()
                 .logout().logoutUrl( adminContextPath + "/logout" ).and()
+                .headers().frameOptions().disable().and()
                 .httpBasic().and()
                 .csrf().disable();
     }
