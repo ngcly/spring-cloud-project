@@ -15,6 +15,12 @@ spring:
     active: native
   # config client 端必须用bootstrap 否则会被默认的给覆盖
   cloud:
+    #消息总线
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    #网关
     gateway:
       globalcors:
         corsConfigurations:

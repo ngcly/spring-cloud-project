@@ -17,7 +17,10 @@ spring:
       username: ngcly
       password: 123456
       profile: dev
-
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 
 eureka:
   client:
