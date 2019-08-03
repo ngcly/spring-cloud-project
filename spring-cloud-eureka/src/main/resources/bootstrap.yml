@@ -7,10 +7,6 @@ spring:
     user:
       name: ngcly
       password: 123456
-  #zipkin 服务地址
-  zipkin:
-    base-url: http://spring-cloud-zipkin/
-  profiles:
 
 eureka:
   instance:

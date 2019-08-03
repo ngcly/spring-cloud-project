@@ -31,12 +31,6 @@ public class UserController {
     @Autowired
     private ConsumerTokenServices consumerTokenServices;
 
-    @ApiOperation(value = "获取用户信息", notes = "根据用户名查询用户信息")
-    @GetMapping("info/{username}")
-    public Result<User> getUser(@ApiParam("用户名") @PathVariable("username")String username){
-        return userService.getUser(username);
-    }
-
     /**
      * 获取用户信息
      */

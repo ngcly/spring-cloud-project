@@ -8,8 +8,6 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-config-server'
     // spring boot admin 客户端
     implementation 'de.codecentric:spring-boot-admin-starter-client'
-    // 链路追踪 客户端
-    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
     // 安全配置
     implementation 'org.springframework.cloud:spring-cloud-starter-security'
     // 配置bus 自动刷新

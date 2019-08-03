@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: spring-cloud-turbine
-  profiles:
-    active: native
   # config client 端必须用bootstrap 否则会被默认的给覆盖
   cloud:
     config:
@@ -21,6 +19,15 @@ spring:
       enabled: true
       trace:
         enabled: true
+
+turbine:
+  aggregator:
+    cluster-config: default
+  # 配置 Eureka 中的 serviceId 列表，指定要监控的服务，多个服务用“,”隔开
+  app-config: spring-cloud-gateway,spring-cloud-user,spring-cloud-other
+  # 指定集群名称
+  cluster-name-expression: new String("default")
+  combine-host-port: true
 
 eureka:
   client:

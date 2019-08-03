@@ -1,3 +1,4 @@
+import request from '@/utils/request'
 
 // Eureka
 export const eureka = 'http://localhost:8000/'
@@ -13,3 +14,10 @@ export const swagger = 'http://localhost:8002/swagger-ui.html'
 
 // Hystrix
 export const hystrix = 'http://localhost:8005/hystrix'
+
+export function hi() {
+  return request({
+    url: '/ot/hi',
+    method: 'get'
+  })
+}

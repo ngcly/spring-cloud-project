@@ -1,19 +1,13 @@
-group 'com.cn.user'
-description '用户模块'
-//热部署会导致类型强制转换错误
-configurations {
-    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-devtools'
-}
+group 'com.cn.other'
+description '其他模块'
+
 dependencies {
-    //implementation 不能往上传递依赖
     implementation project(':spring-cloud-common')
 
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'de.codecentric:spring-boot-admin-starter-client'
-    //zipkin 客户端 该依赖包含下面两个依赖
+    //zipkin 客户端
     implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
-//    implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-bus'
@@ -27,7 +21,4 @@ dependencies {
     implementation "mysql:mysql-connector-java"
     implementation "com.alibaba:druid-spring-boot-starter:${druidVersion}"
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    
 }
-

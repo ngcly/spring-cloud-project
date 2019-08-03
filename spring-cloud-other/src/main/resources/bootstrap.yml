@@ -1,8 +1,8 @@
 server:
-  port: 8006
+  port: 8007
 spring:
   application:
-    name: spring-cloud-user
+    name: spring-cloud-other
   boot:
     admin:
       client:
@@ -32,6 +32,18 @@ spring:
       enabled: true
       trace:
         enabled: true
+
+security:
+  oauth2:
+    client:
+      client-id: cloud_client
+      access-token-uri: http://localhost:8006/oauth/token
+      user-authorization-uri: http://localhost:8006/oauth/authorize
+      client-secret: secret
+    resource:
+      user-info-uri: http://localhost:8006/user/principal
+      prefer-token-info: false
+
 eureka:
   client:
     service-url:

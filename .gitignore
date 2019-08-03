@@ -63,3 +63,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+/spring-cloud-vue/package-lock.json

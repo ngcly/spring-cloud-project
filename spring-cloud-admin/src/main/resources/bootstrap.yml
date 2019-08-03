@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: spring-cloud-admin
-  zipkin:
-    base-url: http://spring-cloud-zipkin/
   #邮箱配置
 #  mail:
 #    host:
