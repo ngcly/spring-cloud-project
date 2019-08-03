@@ -23,5 +23,4 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 | spring-cloud-zipkin | 8004 | [链路追踪](./spring-cloud-zipkin/README.md) |
 | spring-cloud-turbine | 8005 | [聚合监控](./spring-cloud-turbine/README.md) |
 | spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |
-| spring-cloud-auth | 8006 | [授权服务](./spring-cloud-auth/README.md) |
-| spring-cloud-user | 8007 | [用户服务](./spring-cloud-user/README.md) |
+| spring-cloud-user | 8006 | [用户服务](./spring-cloud-user/README.md) |
