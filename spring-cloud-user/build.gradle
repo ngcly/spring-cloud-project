@@ -1,6 +1,9 @@
 group 'com.cn.user'
 description '用户模块'
-
+//热部署会导致类型强制转换错误
+configurations {
+    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-devtools'
+}
 dependencies {
     //implementation 不能往上传递依赖
     implementation project(':spring-cloud-common')
@@ -13,9 +16,15 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-bus'
     implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
 
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+
     implementation "mysql:mysql-connector-java"
     implementation "com.alibaba:druid-spring-boot-starter:${druidVersion}"
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     
 }
 

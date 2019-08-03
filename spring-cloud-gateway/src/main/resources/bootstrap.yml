@@ -35,19 +35,8 @@ spring:
           lowerCaseServiceId: true
       routes:
         #随便命名 必须保证唯一
-        - id: spring-cloud-auth
-          #开头（lb代表从注册中心获取服务） 要转发的的服务地址
-          uri: lb://spring-cloud-auth
-          predicates:
-            - Path=/ah/**
-          filters:
-            - StripPrefix=1
-            # 熔断降级配置
-            - name: Hystrix
-              args:
-                name: default
-                fallbackUri: forward:/defaultFallback
         - id: spring-cloud-user
+          #开头（lb代表从注册中心获取服务） 要转发的的服务地址
           uri: lb://spring-cloud-user
           predicates:
             - Path=/us/**

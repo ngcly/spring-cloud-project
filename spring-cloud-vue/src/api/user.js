@@ -10,14 +10,14 @@ export function login(data) {
 
 export function getInfo() {
   return request({
-    url: '/ah/user/info',
+    url: '/us/user/info',
     method: 'get'
   })
 }
 
 export function logout(data) {
   return request({
-    url: '/ah/user/revoke',
+    url: '/us/user/revoke',
     method: 'post',
     data
   })

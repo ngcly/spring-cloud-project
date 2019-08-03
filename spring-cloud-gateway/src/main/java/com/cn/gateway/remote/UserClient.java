@@ -14,8 +14,8 @@ import java.util.Map;
  * @Description 远程调用授权服务
  * @Date 2019/7/17 9:12
  */
-@FeignClient(name = "spring-cloud-auth", fallback = AuthClient.AuthClientFallback.class)
-public interface AuthClient {
+@FeignClient(name = "spring-cloud-user", fallback = UserClient.AuthClientFallback.class)
+public interface UserClient {
 
     @PostMapping("/oauth/token")
     Map<String,?> getToken(@RequestParam("username") String username,@RequestParam("password") String password,
@@ -26,7 +26,7 @@ public interface AuthClient {
     Map<String,?> checkToken(@RequestParam("token") String token);
 
     @Service
-    class AuthClientFallback implements AuthClient{
+    class AuthClientFallback implements UserClient {
 
         @Override
         public Map<String, ?> getToken(String username, String password, String scope, String grant_type, String client_id, String client_secret) {

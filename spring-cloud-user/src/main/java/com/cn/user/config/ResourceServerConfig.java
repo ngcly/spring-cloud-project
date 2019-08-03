@@ -1,4 +1,4 @@
-package com.cn.auth.config;
+package com.cn.user.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -26,7 +26,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 //.authenticationEntryPoint(new UnauthorizedEntryPoint())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/actuator/**","/druid/**").permitAll()
+                .antMatchers("/actuator/**","/druid/**","/v2/api-docs/**").permitAll()
                 .anyRequest().authenticated();
 
     }

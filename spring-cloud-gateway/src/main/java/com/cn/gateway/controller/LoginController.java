@@ -2,7 +2,7 @@ package com.cn.gateway.controller;
 
 import com.cn.common.pojo.RestCode;
 import com.cn.common.pojo.Result;
-import com.cn.gateway.remote.AuthClient;
+import com.cn.gateway.remote.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,11 +21,11 @@ import java.util.Map;
 @RestController
 public class LoginController {
     @Autowired
-    private AuthClient authClient;
+    private UserClient userClient;
 
     @PostMapping("/user/login")
     public Result login(@RequestBody ModelMap modelMap){
-        Map<String,?> map = authClient.getToken(modelMap.get("username").toString(),modelMap.get("password").toString(),
+        Map<String,?> map = userClient.getToken(modelMap.get("username").toString(),modelMap.get("password").toString(),
                 "all","password","cloud_client","secret");
         if(map!=null){
             if(map.get("access_token")!=null){

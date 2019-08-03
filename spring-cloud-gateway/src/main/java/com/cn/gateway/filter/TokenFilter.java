@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.cn.common.exception.GlobalException;
 import com.cn.common.pojo.RestCode;
-import com.cn.gateway.remote.AuthClient;
+import com.cn.gateway.remote.UserClient;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -32,7 +32,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 
     @Autowired
-    private AuthClient authClient;
+    private UserClient userClient;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -45,7 +45,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
 
         if(StringUtils.isNotEmpty(accessToken)){
             //远程调用授权服务校验token是否失效
-            Map<String,?> checkToken = authClient.checkToken(accessToken);
+            Map<String,?> checkToken = userClient.checkToken(accessToken);
 
             if(checkToken!=null){
                 if(Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){

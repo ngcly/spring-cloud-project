@@ -1,8 +1,8 @@
-package com.cn.auth.pojo;
+package com.cn.user.pojo;
 
-import com.cn.common.pojo.MenuDO;
-import com.cn.common.pojo.RoleDO;
-import com.cn.common.pojo.UserDO;
+import com.cn.user.entity.Menu;
+import com.cn.user.entity.Role;
+import com.cn.user.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,18 +16,18 @@ import java.util.HashSet;
  * @Description security 自定义用户
  * @Date 2019/7/31 11:55
  */
-public class UserDetail extends UserDO implements UserDetails {
-    public UserDetail(UserDO userDO) {
-        if(userDO != null)
+public class UserDetail extends User implements UserDetails {
+    public UserDetail(User user) {
+        if(user != null)
         {
-            this.setId(userDO.getId());
-            this.setUsername(userDO.getUsername());
-            this.setRealName(userDO.getRealName());
-            this.setPassword(userDO.getPassword());
-            this.setGender(userDO.getGender());
-            this.setAvatar(userDO.getAvatar());
-            this.setState(userDO.getState());
-            this.setRoleList(userDO.getRoleList());
+            this.setId(user.getId());
+            this.setUsername(user.getUsername());
+            this.setRealName(user.getRealName());
+            this.setPassword(user.getPassword());
+            this.setGender(user.getGender());
+            this.setAvatar(user.getAvatar());
+            this.setState(user.getState());
+            this.setRoleList(user.getRoleList());
         }
     }
 
@@ -35,10 +35,10 @@ public class UserDetail extends UserDO implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new HashSet<>();
         SimpleGrantedAuthority authority;
-        for (RoleDO role : this.getRoleList()) {
+        for (Role role : this.getRoleList()) {
             authority = new SimpleGrantedAuthority(role.getRoleCode());
             authorities.add(authority);
-            for(MenuDO permission:role.getMenus()){
+            for(Menu permission:role.getMenus()){
                 authority = new SimpleGrantedAuthority(permission.getPurview());
                 authorities.add(authority);
             }

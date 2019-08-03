@@ -1,4 +1,4 @@
-package com.cn.auth.config;
+package com.cn.user.config;
 
 import com.cn.common.pojo.RestCode;
 import com.cn.common.pojo.Result;
