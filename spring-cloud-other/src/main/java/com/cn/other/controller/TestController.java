@@ -19,6 +19,6 @@ public class TestController {
     @ApiOperation(value = "hi", notes = "测试")
     @GetMapping("/hi")
     public Result test(){
-        return Result.success();
+        return Result.success("hi");
     }
 }
