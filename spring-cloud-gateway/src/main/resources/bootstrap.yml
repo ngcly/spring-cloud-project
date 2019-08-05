@@ -20,10 +20,11 @@ spring:
         enabled: true
     #网关
     gateway:
+      #跨域配置
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:9528/"
+            allowedOrigins: "*"
             allowedMethods:
               - OPTION
               - POST
@@ -40,21 +41,33 @@ spring:
             - Path=/us/**
           filters:
             - StripPrefix=1
-            # 熔断降级配置
-            - name: Hystrix
+            # redis限流 ， filter名称必须是RequestRateLimiter
+            - name: RequestRateLimiter
               args:
                 name: default
                 fallbackUri: forward:/defaultFallback
+                #令牌桶填充速率
+                redis-rate-limiter.replenishRate: 1
+                #令牌桶容量 即每秒最多通行5个
+                redis-rate-limiter.burstCapacity: 5
+                #使用 SpEL 表达式 对应 bean
+                key-resolver: '#{@ipKeyResolver}'
         - id: spring-cloud-other
           uri: lb://spring-cloud-other
           predicates:
             - Path=/ot/**
           filters:
             - StripPrefix=1
-            - name: Hystrix
+            - name: RequestRateLimiter
               args:
                 name: default
                 fallbackUri: forward:/defaultFallback
+                #令牌桶填充速率
+                redis-rate-limiter.replenishRate: 1
+                #令牌桶容量 即每秒最多通行5个
+                redis-rate-limiter.burstCapacity: 5
+                #使用 SpEL 表达式 对应 bean
+                key-resolver: '#{@ipKeyResolver}'
 
     config:
       discovery:

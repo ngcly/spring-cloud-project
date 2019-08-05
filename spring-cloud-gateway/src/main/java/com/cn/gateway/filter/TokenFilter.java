@@ -23,7 +23,7 @@ import reactor.core.publisher.Mono;
 /**
  * @author chenning
  * @Classname TokenFilter
- * @Description 过滤器
+ * @Description 全局过滤器
  * @Date 2019/7/12 16:17
  */
 @Component
