@@ -3,6 +3,7 @@ package com.cn.other;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 /**
  * @author chenning
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
  * @Date 2019/8/3 14:48
  */
 @SpringBootApplication
+@EnableCircuitBreaker
 @EnableOAuth2Sso
 public class OtherApplication {
     public static void main(String[] args) {
