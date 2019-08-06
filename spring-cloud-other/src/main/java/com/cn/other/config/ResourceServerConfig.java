@@ -27,6 +27,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
                 .authorizeRequests()
+                //以下地址不进行认证 直接通过，也可以将以下地址配置到配置文件中
                 .antMatchers("/actuator/**","/druid/**","/v2/api-docs/**").permitAll()
                 .anyRequest().authenticated();
 
