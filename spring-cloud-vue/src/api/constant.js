@@ -7,7 +7,7 @@ export const eureka = 'http://localhost:8000/'
 export const admin = 'http://localhost:8003/'
 
 // ZipKin
-export const zipkin = 'http://localhost:8004/'
+export const zipkin = 'http://localhost:9411/'
 
 // Swagger2
 export const swagger = 'http://localhost:8002/swagger-ui.html'
