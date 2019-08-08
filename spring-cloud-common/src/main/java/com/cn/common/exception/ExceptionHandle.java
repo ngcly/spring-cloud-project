@@ -2,6 +2,7 @@ package com.cn.common.exception;
 
 import com.cn.common.pojo.RestCode;
 import com.cn.common.pojo.Result;
+import org.springframework.validation.BindException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MissingPathVariableException;
@@ -41,7 +42,9 @@ public class ExceptionHandle {
             return Result.failure(RestCode.PARAM_ERROR);
         } else if (e instanceof HttpMediaTypeNotAcceptableException){
             return Result.failure(RestCode.HEAD_ERROR);
-        }else if (e instanceof GlobalException){
+        } else if (e instanceof BindException){
+            return Result.failure(400, ((BindException) e).getBindingResult().getAllErrors().get(0).getDefaultMessage());
+        } else if (e instanceof GlobalException){
             return Result.failure(((GlobalException) e).getCode(),e.getMessage());
         } else {
             return Result.failure(RestCode.SERVER_ERROR);

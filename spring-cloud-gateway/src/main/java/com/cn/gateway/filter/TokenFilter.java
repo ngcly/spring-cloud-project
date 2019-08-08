@@ -46,16 +46,16 @@ public class TokenFilter implements GlobalFilter, Ordered {
 
         if(StringUtils.isNotEmpty(accessToken)){
             //远程调用授权服务校验token是否失效
-            Map<String,?> checkToken = userClient.checkToken(accessToken);
-
-            if(checkToken!=null){
-                if(Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){
+//            Map<String,?> checkToken = userClient.checkToken(accessToken);
+//
+//            if(checkToken!=null){
+//                if(Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){
                     //Token有效
                     return chain.filter(exchange);
-                }
-            }else {
-                throw new GlobalException(503,"授权服务熔断");
-            }
+//                }
+//            }else {
+//                throw new GlobalException(503,"授权服务熔断");
+//            }
         }
         //网关拒绝，返回401
         exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
