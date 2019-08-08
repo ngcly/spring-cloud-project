@@ -22,7 +22,6 @@ public class MqReceive {
     private static final Logger log = LoggerFactory.getLogger(MqReceive.class);
 
     @RabbitListener(queues = {RabbitConfig.NORMAL_QUEUE})
-    @RabbitHandler
     public void consume(String msg,Message message, Channel channel) {
         log.info("[listenerManualAck 监听的消息] - [{}]", msg);
         try {

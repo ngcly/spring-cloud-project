@@ -3,8 +3,11 @@ package com.cn.other.config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,12 +21,13 @@ import java.util.Map;
  * @Date 2019/8/8 15:58
  */
 @Configuration
+@EnableRabbit //此注解很重要必须有，新版没有该注解 队列总是会生成两个channel，其中一个正常 另一个虚拟信道消费时会报代理的错误
 public class RabbitConfig {
     private static final Logger log = LoggerFactory.getLogger(RabbitConfig.class);
 
     /**
      * RabbitMQ 三步骤 第一步：创建队列；第二步：创建交换机；第三步：将队列与交换机进行绑定
-     * RabbitMQ 有默认的交换机 没有绑定交换机的队列，都会被被默认绑定到默认交换机
+     * RabbitMQ 有默认的交换机 没有绑定交换机的队列，都会被自动绑定到默认交换机
      */
 
     /**普通队列名称*/
@@ -64,6 +68,13 @@ public class RabbitConfig {
         return rabbitTemplate;
     }
 
+    /**
+     * rabbitmq 默认将信息对象按照jdk序列化 此处改为json序列化
+     */
+    @Bean
+    public MessageConverter MessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
 
     /**默认队列 该队列会自动被 rabbitmq 绑定到默认的交换机上*/
     @Bean

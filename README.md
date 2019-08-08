@@ -9,7 +9,7 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 
 | 依赖 | 版本 |
 |:--|:--|
-| Spring Boot | 2.1.5.RELEASE |
+| Spring Boot | 2.1.7.RELEASE |
 | Spring Cloud | Greenwich.RS2 |
 
 ## 模块概述

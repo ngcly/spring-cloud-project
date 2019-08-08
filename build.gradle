@@ -4,7 +4,7 @@ version = '0.1'
 buildscript { //构建脚本
     //定义版本号
     ext {
-        springBootVersion="2.1.5.RELEASE"
+        springBootVersion="2.1.7.RELEASE"
     }
     repositories {//jar包仓库
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
