@@ -1,4 +1,4 @@
-group 'com.cn.common'
+group 'com.cn'
 description '通用模块'
 
 dependencies {

@@ -32,6 +32,8 @@ spring:
       enabled: true
       trace:
         enabled: true
+  mvc:
+    locale: zh_CN
 eureka:
   client:
     service-url:

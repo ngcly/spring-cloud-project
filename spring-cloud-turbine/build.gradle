@@ -1,4 +1,4 @@
-group 'com.cn.turbine'
+group 'com.cn'
 description '聚合模块'
 
 dependencies {

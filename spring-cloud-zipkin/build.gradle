@@ -1,4 +1,4 @@
-group 'com.cn.zipkin'
+group 'com.cn'
 description '链路追踪模块'
 
 ext {

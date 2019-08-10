@@ -1,4 +1,4 @@
-group 'com.cn.eureka'
+group 'com.cn'
 description '注册中心'
 
 dependencies {

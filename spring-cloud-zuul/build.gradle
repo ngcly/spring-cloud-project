@@ -1,4 +1,4 @@
-group 'com.cn.zuul'
+group 'com.cn'
 description '网关模块'
 
 dependencies {

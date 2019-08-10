@@ -1,4 +1,4 @@
-group 'com.cn.other'
+group 'com.cn'
 description '其他模块'
 
 dependencies {

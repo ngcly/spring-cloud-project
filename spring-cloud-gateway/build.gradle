@@ -1,4 +1,4 @@
-group 'com.cn.gateway'
+group 'com.cn'
 description '网关模块'
 
 configurations {

@@ -1,4 +1,4 @@
-group 'com.cn.admin'
+group 'com.cn'
 description 'spring boot admin 监控模块'
 
 dependencies {

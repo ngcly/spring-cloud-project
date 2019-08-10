@@ -1,4 +1,4 @@
-group 'com.cn.config'
+group 'com.cn'
 description '配置模块'
 
 dependencies {
