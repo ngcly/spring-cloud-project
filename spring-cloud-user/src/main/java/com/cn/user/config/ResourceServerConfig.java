@@ -1,5 +1,7 @@
 package com.cn.user.config;
 
+import com.cn.common.exception.CustomAccessDeniedHandler;
+import com.cn.common.exception.UnauthorizedEntryPoint;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -21,13 +23,15 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
         http
                 .csrf().disable()
+                // 认证鉴权错误处理,为了统一异常处理。每个资源服务器都应该加上。
                 .exceptionHandling()
-                .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
-                //.authenticationEntryPoint(new UnauthorizedEntryPoint())
+                .accessDeniedHandler(new CustomAccessDeniedHandler())
+                .authenticationEntryPoint(new UnauthorizedEntryPoint())
                 .and()
                 .authorizeRequests()
                 .antMatchers("/actuator/**","/druid/**","/v2/api-docs/**").permitAll()
                 .anyRequest().authenticated();
 
     }
+
 }

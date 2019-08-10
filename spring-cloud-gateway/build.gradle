@@ -3,12 +3,10 @@ description '网关模块'
 
 configurations {
     implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+    implementation.exclude group: 'org.springframework.cloud', module: 'spring-cloud-starter-oauth2'
 }
 dependencies {
     implementation project(':spring-cloud-common')
-    implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
-    implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
-    
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
     implementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'

@@ -3,8 +3,8 @@ package com.cn.user.config;
 import com.cn.common.pojo.RestCode;
 import com.cn.common.pojo.Result;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
+
 
 /**
  * @author chenning
@@ -16,10 +16,9 @@ public class ExceptionTranslatorImpl implements WebResponseExceptionTranslator {
 
     @Override
     public ResponseEntity translate(Exception e) throws Exception {
-        if (e instanceof OAuth2Exception) {
-            return ResponseEntity.ok(Result.failure(RestCode.UNAUTHZ));
-        }
-        throw e;
+//        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+//        Result responseData = GlobalExceptionHandler.resolveOauthException(e,request.getRequestURI());
+        return ResponseEntity.ok(Result.failure(RestCode.USER_ERR));
     }
 
 }

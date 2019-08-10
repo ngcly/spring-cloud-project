@@ -1,5 +1,7 @@
 package com.cn.other.config;
 
+import com.cn.common.exception.CustomAccessDeniedHandler;
+import com.cn.common.exception.UnauthorizedEntryPoint;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,7 +26,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http
                 .csrf().disable()
                 .exceptionHandling()
-                .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+                .accessDeniedHandler(new CustomAccessDeniedHandler())
+                .authenticationEntryPoint(new UnauthorizedEntryPoint())
                 .and()
                 .authorizeRequests()
                 //以下地址不进行认证 直接通过，也可以将以下地址配置到配置文件中

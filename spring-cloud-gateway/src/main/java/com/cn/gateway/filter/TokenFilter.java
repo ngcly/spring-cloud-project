@@ -1,18 +1,18 @@
 package com.cn.gateway.filter;
 
 import java.util.List;
-import java.util.Map;
 
-import com.cn.common.exception.GlobalException;
+import com.alibaba.fastjson.JSON;
 import com.cn.common.pojo.RestCode;
-import com.cn.gateway.remote.UserClient;
+import com.cn.common.pojo.Result;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.server.ServerWebExchange;
@@ -31,8 +31,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
     /** url匹配器*/
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 
-    @Autowired
-    private UserClient userClient;
+    private final String TOKEN_PREFIX = "Bearer";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -45,21 +44,12 @@ public class TokenFilter implements GlobalFilter, Ordered {
         String accessToken = extractToken(exchange.getRequest());
 
         if(StringUtils.isNotEmpty(accessToken)){
-            //远程调用授权服务校验token是否失效
-//            Map<String,?> checkToken = userClient.checkToken(accessToken);
-//
-//            if(checkToken!=null){
-//                if(Boolean.parseBoolean(String.valueOf(checkToken.get("active")))){
-                    //Token有效
-                    return chain.filter(exchange);
-//                }
-//            }else {
-//                throw new GlobalException(503,"授权服务熔断");
-//            }
+            return chain.filter(exchange);
         }
-        //网关拒绝，返回401
-        exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-        return exchange.getResponse().writeWith(Flux.error(new GlobalException(RestCode.UNAUTHEN)));
+        exchange.getResponse().setStatusCode(HttpStatus.OK);
+        exchange.getResponse().getHeaders().add("Content-Type", "application/json;charset=UTF-8");
+        //无token，返回未登录信息
+        return exchange.getResponse().writeWith(Flux.just(this.getBodyBuffer(exchange.getResponse(), Result.failure(RestCode.UNAUTHEN))));
     }
 
     @Override
@@ -67,11 +57,14 @@ public class TokenFilter implements GlobalFilter, Ordered {
         return -200;
     }
 
+    /**
+     * 解析 token
+     */
     protected String extractToken(ServerHttpRequest request) {
         List<String> strings = request.getHeaders().get("Authorization");
         String authToken = null;
-        if (strings != null) {
-            authToken = strings.get(0).substring("Bearer".length()).trim();
+        if (strings != null && strings.get(0) != null && strings.get(0).startsWith(TOKEN_PREFIX)) {
+            authToken = strings.get(0).substring(TOKEN_PREFIX.length()).trim();
         }
 
         if (StringUtils.isBlank(authToken)) {
@@ -81,5 +74,12 @@ public class TokenFilter implements GlobalFilter, Ordered {
             }
         }
         return authToken;
+    }
+
+    /**
+     * 封装返回值
+     */
+    private DataBuffer getBodyBuffer(ServerHttpResponse response, Result result) {
+        return response.bufferFactory().wrap(JSON.toJSONBytes(result));
     }
 }
