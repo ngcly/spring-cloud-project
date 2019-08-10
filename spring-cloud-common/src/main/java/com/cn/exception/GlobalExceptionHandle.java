@@ -3,7 +3,6 @@ package com.cn.exception;
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
 import org.springframework.security.oauth2.common.exceptions.InvalidGrantException;
-import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -32,6 +31,13 @@ public class GlobalExceptionHandle {
     @ExceptionHandler(value = Exception.class)
     public Result handlerException(HttpServletRequest request, Exception e){
         e.printStackTrace();
+        return getExceptionResult(e);
+    }
+
+    /**
+     * 获取异常对应的返回内容
+     */
+    public static Result getExceptionResult(Exception e){
         if (e instanceof AccessDeniedException) {
             return Result.failure(RestCode.UNAUTHZ);
         } else if (e instanceof HttpRequestMethodNotSupportedException) {
@@ -53,6 +59,5 @@ public class GlobalExceptionHandle {
         } else {
             return Result.failure(RestCode.SERVER_ERROR);
         }
-
     }
 }

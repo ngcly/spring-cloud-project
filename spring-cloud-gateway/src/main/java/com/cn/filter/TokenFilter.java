@@ -31,7 +31,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
     /** url匹配器*/
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 
-    private final String TOKEN_PREFIX = "Bearer";
+    private final String TOKEN_PREFIX = "bearer";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
