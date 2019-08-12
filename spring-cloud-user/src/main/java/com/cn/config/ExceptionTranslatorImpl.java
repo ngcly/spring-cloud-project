@@ -1,6 +1,6 @@
 package com.cn.config;
 
-import com.cn.exception.GlobalExceptionHandle;
+import static com.cn.exception.GlobalExceptionHandle.getExceptionResult;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
 
@@ -14,7 +14,7 @@ public class ExceptionTranslatorImpl implements WebResponseExceptionTranslator {
 
     @Override
     public ResponseEntity translate(Exception e) throws Exception {
-        return ResponseEntity.ok(GlobalExceptionHandle.getExceptionResult(e));
+        return ResponseEntity.ok(getExceptionResult(e));
     }
 
 }
