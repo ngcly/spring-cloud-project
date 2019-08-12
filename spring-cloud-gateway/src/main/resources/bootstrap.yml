@@ -40,12 +40,15 @@ spring:
           predicates:
             - Path=/us/**
           filters:
-            - StripPrefix=1
-            # redis限流 ， filter名称必须是RequestRateLimiter
-            - name: RequestRateLimiter
+            # 熔断 name 必须是 Hystrix
+            - name: Hystrix
               args:
                 name: default
                 fallbackUri: forward:/defaultFallback
+            - StripPrefix=1
+            # redis限流  name 必须是 RequestRateLimiter
+            - name: RequestRateLimiter
+              args:
                 #令牌桶填充速率
                 redis-rate-limiter.replenishRate: 1
                 #令牌桶容量 即每秒最多通行5个
@@ -57,11 +60,13 @@ spring:
           predicates:
             - Path=/ot/**
           filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
+            - name: Hystrix
               args:
                 name: default
                 fallbackUri: forward:/defaultFallback
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
                 #令牌桶填充速率
                 redis-rate-limiter.replenishRate: 1
                 #令牌桶容量 即每秒最多通行5个
