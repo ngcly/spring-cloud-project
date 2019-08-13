@@ -1,6 +1,6 @@
 package com.cn.filter;
 
-import com.cn.common.pojo.Result;
+import com.cn.pojo.Result;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
