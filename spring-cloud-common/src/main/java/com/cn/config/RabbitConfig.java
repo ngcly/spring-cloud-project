@@ -63,6 +63,7 @@ public class RabbitConfig {
     public RabbitTemplate rabbitTemplate(CachingConnectionFactory connectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMandatory(true);
+        rabbitTemplate.setMessageConverter(messageConverter());
         rabbitTemplate.setConfirmCallback((correlationData, ack, cause) -> log.info("消息发送成功:correlationData({}),ack({}),cause({})", correlationData, ack, cause));
         rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) -> log.info("消息丢失:exchange({}),route({}),replyCode({}),replyText({}),message:{}", exchange, routingKey, replyCode, replyText, message));
         return rabbitTemplate;
@@ -72,7 +73,7 @@ public class RabbitConfig {
      * rabbitmq 默认将信息对象按照jdk序列化 此处改为json序列化
      */
     @Bean
-    public MessageConverter MessageConverter() {
+    public MessageConverter messageConverter() {
         return new Jackson2JsonMessageConverter();
     }
 

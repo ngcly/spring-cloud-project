@@ -1,6 +1,5 @@
 package com.cn.exception;
 
-import com.cn.exception.GlobalException;
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
 import io.netty.channel.ConnectTimeoutException;

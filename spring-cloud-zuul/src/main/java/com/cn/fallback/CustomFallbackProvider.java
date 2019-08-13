@@ -1,6 +1,6 @@
 package com.cn.fallback;
 
-import com.cn.common.pojo.Result;
+import com.cn.pojo.Result;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
