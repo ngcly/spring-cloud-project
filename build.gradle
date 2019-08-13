@@ -60,6 +60,7 @@ subprojects {
 
         swaggerVersion = '2.9.2'
         druidVersion = '1.1.17'
+        logbackVersion = '6.1'
     }
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
