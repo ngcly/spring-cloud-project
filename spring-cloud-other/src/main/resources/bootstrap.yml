@@ -37,11 +37,10 @@ security:
   oauth2:
     client:
       client-id: cloud_client
-      access-token-uri: http://localhost:8002/us/oauth/token
-      user-authorization-uri: http://localhost:8002/us/oauth/authorize
-      client-secret: secret
+      access-token-uri: http://localhost:8006/oauth/token
+      user-authorization-uri: http://localhost:8006/oauth/authorize
     resource:
-      user-info-uri: http://localhost:8002/us/user/principal
+      user-info-uri: http://localhost:8006/user/principal
       prefer-token-info: false
 
 eureka:

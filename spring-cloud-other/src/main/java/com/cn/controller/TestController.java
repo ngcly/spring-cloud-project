@@ -44,7 +44,7 @@ public class TestController {
      * 免认证接口
      */
     @ApiOperation(value = "test", notes = "测试")
-    @GetMapping("/test")
+    @GetMapping("/test/t")
     public Result test(){
         //redis 分布式锁
         Lock lock = redisLockRegistry.obtain("lockKey");
