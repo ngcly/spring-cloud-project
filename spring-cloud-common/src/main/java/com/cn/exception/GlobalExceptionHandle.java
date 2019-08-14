@@ -2,6 +2,7 @@ package com.cn.exception;
 
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.oauth2.common.exceptions.InvalidGrantException;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.nio.file.AccessDeniedException;
 
 /**
  * @author chenning
@@ -30,7 +30,6 @@ public class GlobalExceptionHandle {
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
     public Result handlerException(HttpServletRequest request, Exception e){
-        e.printStackTrace();
         return getExceptionResult(e);
     }
 
@@ -57,6 +56,7 @@ public class GlobalExceptionHandle {
         } else if (e instanceof GlobalException){
             return Result.failure(((GlobalException) e).getCode(),e.getMessage());
         } else {
+            e.printStackTrace();
             return Result.failure(RestCode.SERVER_ERROR);
         }
     }
