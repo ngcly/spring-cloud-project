@@ -44,7 +44,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 //以下地址不进行认证 直接通过，也可以将以下地址配置到配置文件中
-                .antMatchers("/actuator/**","/druid/**","/v2/api-docs/**").permitAll()
+                .antMatchers("/actuator/**","/druid/**","/v2/api-docs/**","/test/**").permitAll()
                 .anyRequest().authenticated();
 
     }
