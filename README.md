@@ -76,7 +76,8 @@ spring-cloud-project -- 根目录
 2. 使用 gradle 工具进行项目依赖构建
 3. 修改配置中心的 application-config-dev.yml 配置文件中相关数据源信息
 4. 启动 MySql、RabbitMQ、Redis 三个必备服务 和 三个非必需的 ELK(Elasticsearch、Logstash、Kibana) 服务
-5. 上述完成后即可开始启动项目服务
+5. 若要启动 vue 页面端 请首先安装好 node.js
+6. 上述完成后即可开始启动项目服务
 #####项目服务启动顺序
 1. spring-cloud-eureka （必须）
 2. spring-cloud-config （必须）
@@ -86,7 +87,15 @@ spring-cloud-project -- 根目录
 6. spring-cloud-turbine （可选）
 7. spring-cloud-user （可选）
 8. spring-cloud-other （可选）
-
+######spring-cloud-vue 页面端的启动 
+1. 请先点开idea的 Terminal 调出执行命令窗口
+2. 依次执行以下命令：  
+``` 
+ cd spring-cloud-vue  
+ npm install
+ npm run dev
+```
+ 
 ***
 待完成：  
 日志记录 ELK  
