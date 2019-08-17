@@ -76,7 +76,7 @@ spring-cloud-project -- 根目录
 2. 使用 gradle 工具进行项目依赖构建
 3. 修改配置中心的 application-config-dev.yml 配置文件中相关数据源信息
 4. 启动 MySql、RabbitMQ、Redis 三个必备服务 和 三个非必需的 ELK(Elasticsearch、Logstash、Kibana) 服务
-5. 若要启动 vue 页面端 请首先安装好 node.js
+5. 创建数据库并执行sql脚本。若要启动 vue 页面端 请首先安装好 node.js
 6. 上述完成后即可开始启动项目服务  
 #### 项目服务启动顺序  
 1. spring-cloud-eureka （必须）
