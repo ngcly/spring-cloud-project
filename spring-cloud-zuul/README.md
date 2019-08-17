@@ -1,1 +1,2 @@
 # spring-cloud-zuul 网关服务
+由于spring官方不打算集成zuul2，所以此处是基于zuul1来的，由于还是更加推荐使用gateway网关

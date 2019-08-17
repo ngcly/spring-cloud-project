@@ -1,4 +1,5 @@
 spring:
+  # RabbitMQ 配置
   rabbitmq:
     host: localhost
     port: 5672
@@ -116,7 +117,7 @@ spring:
       ddl-auto: update
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-  # 配置redis
+  # redis配置
   redis:
     host: localhost
     port: 6379
