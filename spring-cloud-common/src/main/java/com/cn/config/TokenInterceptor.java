@@ -19,7 +19,12 @@ import javax.servlet.http.HttpServletRequest;
 public class TokenInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate template) {
-        RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
+        RequestAttributes requestAttributes;
+        try {
+            requestAttributes = RequestContextHolder.currentRequestAttributes();
+        }catch (Exception e){
+            requestAttributes = null;
+        }
         if (requestAttributes != null) {
             HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
             String token = request.getHeader("Authorization");

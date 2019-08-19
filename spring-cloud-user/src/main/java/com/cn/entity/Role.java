@@ -34,7 +34,7 @@ public class Role implements Serializable {
     private Boolean available;  //是否可用
 
     // 用户 - 角色关系定义;
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="user_role",joinColumns={@JoinColumn(name="role_id")},inverseJoinColumns={@JoinColumn(name="user_id")})
     private Set<User> userInfoList;// 一个角色对应多个用户
 

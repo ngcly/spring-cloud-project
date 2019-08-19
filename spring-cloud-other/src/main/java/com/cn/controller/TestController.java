@@ -15,7 +15,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
@@ -73,9 +72,9 @@ public class TestController {
      * admin 权限访问接口
      */
     @GetMapping("/admin")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public String getAdmin() {
-        return "拥有Admin权限可访问!!!!!!";
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public Result getAdmin() {
+        return Result.success("拥有Admin权限可访问!!!!!!");
     }
 
     /**

@@ -34,7 +34,7 @@ public class Menu implements Serializable {
     private String parentIds;
     private Integer sort;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="role_menu",joinColumns={@JoinColumn(name="menu_id")},inverseJoinColumns={@JoinColumn(name="role_id")})
     private Set<Role> roles;
 
