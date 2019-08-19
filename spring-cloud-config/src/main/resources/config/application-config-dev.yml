@@ -122,3 +122,14 @@ spring:
     host: localhost
     port: 6379
     database: 0
+
+# hystrix 信号量隔离，3秒后自动超时
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 6000 # 设置 hystrix 的超时时间为6000ms
+  shareSecurityContext: true

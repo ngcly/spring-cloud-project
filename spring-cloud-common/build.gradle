@@ -12,6 +12,9 @@ dependencies {
 
     api 'org.springframework.cloud:spring-cloud-starter-oauth2'
 
+    api 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    api 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+
     api "io.springfox:springfox-swagger2:${swaggerVersion}"
     api "io.springfox:springfox-swagger-ui:${swaggerVersion}"
 

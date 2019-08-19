@@ -2,8 +2,10 @@ package com.cn.service;
 
 import com.cn.pojo.Result;
 import com.cn.entity.User;
+import com.cn.pojo.UserDO;
 import com.cn.pojo.UserDetail;
 import com.cn.repository.UserRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -29,6 +31,9 @@ public class UserService implements UserDetailsService {
     }
 
     public Result getUser(String username){
-        return Result.success(userRepository.findByUsername(username));
+        UserDO userDO = new UserDO();
+        User user = userRepository.findByUsername(username).orElse(null);
+        BeanUtils.copyProperties(user, userDO);
+        return Result.success(userDO);
     }
 }

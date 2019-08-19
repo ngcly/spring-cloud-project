@@ -3,6 +3,7 @@ package com.cn.controller;
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
 import com.cn.entity.User;
+import com.cn.pojo.UserDO;
 import com.cn.pojo.UserDetail;
 import com.cn.service.UserService;
 import io.swagger.annotations.Api;
@@ -57,5 +58,15 @@ public class UserController {
     public Result revoke(@RequestBody ModelMap modelMap) {
         String access_token = modelMap.get("token").toString().substring("Bearer".length()).trim();
         return consumerTokenServices.revokeToken(access_token)?Result.success():Result.failure(RestCode.SERVER_ERROR);
+    }
+
+    @GetMapping("/test")
+    public Result test(){
+        return Result.success("hello");
+    }
+
+    @GetMapping("/info/{username}")
+    public Result<UserDO> getUser(@PathVariable("username") String username){
+        return userService.getUser(username);
     }
 }

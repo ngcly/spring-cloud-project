@@ -23,7 +23,7 @@ spring:
         enabled: true
         #指定config serve的 service-id
         service-id: spring-cloud-config
-      name: application-config
+      name: application-gateway,application-config
       username: ngcly
       password: 123456
       profile: dev
