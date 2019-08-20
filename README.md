@@ -22,6 +22,7 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 | spring-cloud-admin | 8003 | [监控中心](./spring-cloud-admin/README.md) |
 | spring-cloud-zipkin | 9411 | [链路追踪](./spring-cloud-zipkin/README.md) |
 | spring-cloud-turbine | 8005 | [聚合监控](./spring-cloud-turbine/README.md) |
+| spring-cloud-txlcn | 7970 | [分布式事务](./spring-cloud-txlcn/README.md) |
 | spring-cloud-user | 8006 | [用户服务](./spring-cloud-user/README.md) |
 | spring-cloud-user | 8007 | [其他服务](./spring-cloud-other/README.md) |
 | spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |
@@ -55,7 +56,7 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 * 分布式锁：spring-integration-redis
 * 消息队列：RabbitMQ
 * 日志处理：ELK (Elasticsearch、Logstash、Kibana)
-* 分布式事务：TX-LCN (待实现)  
+* 分布式事务：TX-LCN  
 ### 四、项目结构  
 ```
 spring-cloud-project -- 根目录
@@ -66,6 +67,7 @@ spring-cloud-project -- 根目录
 ├── spring-cloud-gateway -- 路由网关服务
 ├── spring-cloud-other -- 其他 示例服务
 ├── spring-cloud-turbine -- 调用实时监控服务
+├── spring-cloud-txlcn -- 分布式事务服务
 ├── spring-cloud-user -- 用户认证授权服务
 ├── spring-cloud-vue -- vue 页面端
 ├── spring-cloud-zipkin -- 链路追踪服务
@@ -85,8 +87,9 @@ spring-cloud-project -- 根目录
 4. spring-cloud-gateway （可选）
 5. spring-cloud-zipkin （可选）
 6. spring-cloud-turbine （可选）
-7. spring-cloud-user （可选）
-8. spring-cloud-other （可选）  
+7. spring-cloud-txlcn (可选)
+8. spring-cloud-user （可选）
+9. spring-cloud-other （可选）  
 ##### spring-cloud-vue 页面端的启动  
 1. 请先点开idea的 Terminal 调出执行命令窗口
 2. 依次执行以下命令：  
@@ -103,6 +106,5 @@ spring-cloud-project -- 根目录
 ![链路追踪](/images/zipkin.png)  
 ![API文档](/images/swagger.png)
 ***
-待完成：  
-TX_LCN分布式事务  
+待完成：    
 配置文件敏感信息加密  

@@ -9,4 +9,5 @@ include 'spring-cloud-turbine'
 include 'spring-cloud-common'
 include 'spring-cloud-gateway'
 include 'spring-cloud-other'
+include 'spring-cloud-txlcn'
 

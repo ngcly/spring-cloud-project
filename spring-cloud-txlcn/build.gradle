@@ -1,23 +1,15 @@
 group 'com.cn'
-description '其他模块'
+description '分布式事务模块'
 
 dependencies {
-    implementation project(':spring-cloud-common')
-
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'de.codecentric:spring-boot-admin-starter-client'
-    //zipkin 客户端
-    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-bus'
     implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
 
-    implementation "mysql:mysql-connector-java"
     implementation "com.alibaba:druid-spring-boot-starter:${druidVersion}"
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    //分布式事务
-    implementation "com.codingapi.txlcn:txlcn-tc:${txlcnVersion}"
-    implementation "com.codingapi.txlcn:txlcn-txmsg-netty:${txlcnVersion}"
+    implementation "com.codingapi.txlcn:txlcn-tm:${txlcnVersion}"
 }
