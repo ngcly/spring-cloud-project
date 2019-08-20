@@ -95,8 +95,14 @@ spring-cloud-project -- 根目录
  npm install
  npm run dev
 ```
- 
+### 六、效果预览
+![首页](/images/index.png)  
+![注册中心](/images/eureka.png)  
+![监控中心](/images/admin.png)  
+![熔断监控](/images/turbine.png)  
+![链路追踪](/images/zipkin.png)  
+![API文档](/images/swagger.png)
 ***
 待完成：  
-日志记录 ELK  
+TX_LCN分布式事务  
 配置文件敏感信息加密  
