@@ -2,7 +2,7 @@ server:
   port: 7970
 spring:
   application:
-    name: spring-cloud-txlcn
+    name: tx-manager
   boot:
     admin:
       client:
