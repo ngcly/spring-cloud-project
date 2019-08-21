@@ -15,7 +15,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableCircuitBreaker
 @EnableFeignClients
-//@EnableDistributedTransaction
+//@EnableDistributedTransaction //TX_LCN 有bug 跟zipkin有冲突
 public class OtherApplication {
     public static void main(String[] args) {
         SpringApplication.run(OtherApplication.class, args);

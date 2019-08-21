@@ -3,6 +3,19 @@ server:
 spring:
   application:
     name: spring-cloud-user
+  boot:
+    admin:
+      client:
+        url: http://spring-cloud-admin
+    # zipkin 服务地址 这里使用服务名 动态获取地址
+  zipkin:
+    base-url: http://spring-cloud-zipkin/
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1.0
+
   # config client 端必须用bootstrap 否则会被默认的给覆盖
   cloud:
     config:
