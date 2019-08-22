@@ -59,7 +59,7 @@ feign:
 tx-lcn:
   client:
     #TM 集群的情况下可以写多个地址，逗号隔开
-    manager-address: 127.0.0.1:8070
+    manager-address: 127.0.0.1:8150
     # 是否启动LCN负载均衡策略(优化选项，开启与否，功能不受影响)
   ribbon:
     loadbalancer:
