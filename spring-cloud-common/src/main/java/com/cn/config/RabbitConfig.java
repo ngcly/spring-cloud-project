@@ -33,26 +33,26 @@ public class RabbitConfig {
     /**普通队列名称*/
     public static final String NORMAL_QUEUE = "normal";
 
-    /**死信队列名称*/
-    public static final String DLX_QUEUE = "delay.queue";
-
-    /**延迟消费队列名称*/
-    public static final String DELAY_QUEUE = "dev.queue";
-
-    /**死信路由名称*/
-    public static final String DLX_ROUTING_KEY = "";
-
-    /**延迟路由名称*/
-    public static final String DELAY_ROUTING_KEY = "all";
-
     /**广播交换机名称*/
     public static final String FANOUT_EXCHANGE = "fanout";
 
-    /**死信交换机名称*/
-    public static final String DLX_EXCHANGE = "delay";
+    /**延迟(死信) 队列名称*/
+    public static final String DLX_QUEUE = "dlx-queue";
 
-    /**延迟换机名称*/
-    public static final String DELAY_EXCHANGE = "dev";
+    /**延迟(死信)路由名称*/
+    public static final String DLX_ROUTING_KEY = "";
+
+    /**延迟(死信)交换机名称*/
+    public static final String DLX_EXCHANGE = "dlx-exchange";
+
+    /**延迟消费队列名称*/
+    public static final String DELAY_QUEUE = "delay-queue";
+
+    /**延迟消费换机名称*/
+    public static final String DELAY_EXCHANGE = "delay-exchange";
+
+    /**延迟消费路由名称*/
+    public static final String DELAY_ROUTING_KEY = "delay";
 
     /**
      * 配置摸板（非必要 测试延迟队列方便直观）

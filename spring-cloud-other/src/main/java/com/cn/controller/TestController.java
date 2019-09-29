@@ -59,6 +59,10 @@ public class TestController {
                 log.info("争抢到锁 ");
                 // do business
                 rabbitTemplate.convertAndSend(RabbitConfig.NORMAL_QUEUE,"MQ发消息啦");
+                rabbitTemplate.convertAndSend(RabbitConfig.DLX_EXCHANGE,RabbitConfig.DLX_ROUTING_KEY,"我是延迟信息",msg->{
+                    msg.getMessageProperties().setExpiration(5 * 1000 + "");
+                    return msg;
+                });
             }
         } catch (Exception e) {
             log.error("获取锁失败 ： ", e);
