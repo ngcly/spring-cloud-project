@@ -1,5 +1,6 @@
 package com.cn.controller;
 
+import com.cn.pojo.MqMsgDO;
 import com.cn.pojo.Result;
 import com.cn.config.RabbitConfig;
 import com.cn.pojo.UserDO;
@@ -9,14 +10,18 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.integration.redis.util.RedisLockRegistry;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
@@ -35,7 +40,7 @@ public class TestController {
     private RedisLockRegistry redisLockRegistry;
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    @Autowired
+    @Resource
     private UserClient userClient;
 
     @ApiOperation(value = "hi", notes = "hi")
@@ -59,7 +64,7 @@ public class TestController {
                 log.info("争抢到锁 ");
                 // do business
                 rabbitTemplate.convertAndSend(RabbitConfig.NORMAL_QUEUE,"MQ发消息啦");
-                rabbitTemplate.convertAndSend(RabbitConfig.DLX_EXCHANGE,RabbitConfig.DLX_ROUTING_KEY,"我是延迟信息",msg->{
+                rabbitTemplate.convertAndSend(RabbitConfig.DELAY_EXCHANGE,RabbitConfig.DELAY_ROUTING_KEY,"我是延迟信息",msg->{
                     msg.getMessageProperties().setExpiration(5 * 1000 + "");
                     return msg;
                 });
@@ -70,6 +75,19 @@ public class TestController {
             lock.unlock();
         }
         return Result.success("test");
+    }
+
+    @ApiOperation(value = "test/d", notes = "延迟队列补偿测试")
+    @GetMapping("/test/d")
+    public Result delayTest(){
+        MultiValueMap<String,Object> map = new LinkedMultiValueMap<>();
+//        map.add("paramtest", "123");
+        MqMsgDO<MultiValueMap> dataDTO = new MqMsgDO<>("spring-cloud-user","/user/info/hehe", HttpMethod.GET,map,1);
+        rabbitTemplate.convertAndSend(RabbitConfig.DELAY_EXCHANGE, RabbitConfig.DELAY_ROUTING_KEY, dataDTO, msg -> {
+            msg.getMessageProperties().setHeader("x-delay", 30*1000);
+            return msg;
+        });
+        return Result.success();
     }
 
     /**
