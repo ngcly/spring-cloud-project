@@ -1,0 +1,22 @@
+server:
+  port: 8182
+spring:
+  application:
+    name: spring-cloud-other
+  #注册到nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    #表示要订阅服务的服务名 多个订阅则用,分隔 或者* 订阅所有
+    subscribed-services: spring-cloud-user
