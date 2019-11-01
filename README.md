@@ -24,7 +24,7 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 | spring-cloud-turbine | 8005 | [聚合监控](./spring-cloud-turbine/README.md) |
 | spring-cloud-txlcn | 7970 | [分布式事务](./spring-cloud-txlcn/README.md) |
 | spring-cloud-user | 8006 | [用户服务](./spring-cloud-user/README.md) |
-| spring-cloud-user | 8007 | [其他服务](./spring-cloud-other/README.md) |
+| spring-cloud-other | 8007 | [其他服务](./spring-cloud-other/README.md) |
 | spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |
 | spring-cloud-vue | 8080 | [前端页面](./spring-cloud-vue/README.md) |
 
