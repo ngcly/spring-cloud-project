@@ -1,0 +1,37 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      filter:
+        enabled: false
+      transport:
+        dashboard: localhost:8080
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+        - id: spring-cloud-user
+          uri: lb://spring-cloud-user
+          predicates:
+            - Path=/user/**
+        - id: spring-cloud-other
+          uri: lb://spring-cloud-other
+          predicates:
+            - Path=/other/**
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
