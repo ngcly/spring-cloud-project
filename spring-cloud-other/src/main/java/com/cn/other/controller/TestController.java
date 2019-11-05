@@ -1,7 +1,7 @@
 package com.cn.other.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.cn.api.HelloService;
+import com.cn.common.api.HelloService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

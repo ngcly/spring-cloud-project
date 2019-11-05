@@ -1,0 +1,336 @@
+2019-11-02 14:17:22,267 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 14:39:48,060 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 14:40:06,979 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 14:41:31,720 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 14:41:31,721 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:51634, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,51634,176022068632500
+
+2019-11-02 14:41:31,721 INFO send udp packet: 10.0.75.1,51634,176022068632500
+
+2019-11-02 14:41:31,736 INFO received ack: {"type": "push-ack", "lastRefTime":"176022068632500", "data":""} from: 10.0.75.1:, cost: 51634 ms, unacked: 15, total push: 0
+
+2019-11-02 14:46:00,525 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 14:46:00,525 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:51634, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,51634,176290873884800
+
+2019-11-02 14:46:00,525 INFO send udp packet: 10.0.75.1,51634,176290873884800
+
+2019-11-02 14:46:00,527 INFO received ack: {"type": "push-ack", "lastRefTime":"176290873884800", "data":""} from: 10.0.75.1:, cost: 51634 ms, unacked: 2, total push: 0
+
+2019-11-02 14:46:18,569 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 14:46:18,569 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:51634, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,51634,176308917859100
+
+2019-11-02 14:46:18,569 INFO send udp packet: 10.0.75.1,51634,176308917859100
+
+2019-11-02 14:46:18,574 INFO received ack: {"type": "push-ack", "lastRefTime":"176308917859100", "data":""} from: 10.0.75.1:, cost: 51634 ms, unacked: 5, total push: 0
+
+2019-11-02 14:58:57,569 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 14:58:57,569 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,177067917391800
+
+2019-11-02 14:58:57,569 INFO send udp packet: 10.0.75.1,58890,177067917391800
+
+2019-11-02 14:58:57,574 INFO received ack: {"type": "push-ack", "lastRefTime":"177067917391800", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 5, total push: 0
+
+2019-11-02 14:59:15,716 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 14:59:15,716 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,177086064610200
+
+2019-11-02 14:59:15,716 INFO send udp packet: 10.0.75.1,58890,177086064610200
+
+2019-11-02 14:59:15,743 INFO received ack: {"type": "push-ack", "lastRefTime":"177086064610200", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 27, total push: 0
+
+2019-11-02 15:08:44,006 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:08:44,006 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,177654354241700
+
+2019-11-02 15:08:44,006 INFO send udp packet: 10.0.75.1,58890,177654354241700
+
+2019-11-02 15:08:44,008 INFO received ack: {"type": "push-ack", "lastRefTime":"177654354241700", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 2, total push: 0
+
+2019-11-02 15:16:29,971 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:16:29,980 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,178120327695200
+
+2019-11-02 15:16:29,980 INFO send udp packet: 10.0.75.1,58890,178120327695200
+
+2019-11-02 15:16:29,984 INFO received ack: {"type": "push-ack", "lastRefTime":"178120327695200", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 4, total push: 0
+
+2019-11-02 15:27:53,709 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:27:53,709 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,178804057903000
+
+2019-11-02 15:27:53,709 INFO send udp packet: 10.0.75.1,58890,178804057903000
+
+2019-11-02 15:27:53,712 INFO received ack: {"type": "push-ack", "lastRefTime":"178804057903000", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 3, total push: 0
+
+2019-11-02 15:33:47,896 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:33:47,897 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,179158244169100
+
+2019-11-02 15:33:47,897 INFO send udp packet: 10.0.75.1,58890,179158244169100
+
+2019-11-02 15:33:47,903 INFO received ack: {"type": "push-ack", "lastRefTime":"179158244169100", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 6, total push: 0
+
+2019-11-02 15:35:45,361 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:35:45,361 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,179275709535300
+
+2019-11-02 15:35:45,361 INFO send udp packet: 10.0.75.1,58890,179275709535300
+
+2019-11-02 15:35:45,363 INFO received ack: {"type": "push-ack", "lastRefTime":"179275709535300", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 2, total push: 0
+
+2019-11-02 15:36:03,774 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:36:03,774 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:58890, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,58890,179294122214400
+
+2019-11-02 15:36:03,774 INFO send udp packet: 10.0.75.1,58890,179294122214400
+
+2019-11-02 15:36:03,777 INFO received ack: {"type": "push-ack", "lastRefTime":"179294122214400", "data":""} from: 10.0.75.1:, cost: 58890 ms, unacked: 3, total push: 0
+
+2019-11-02 15:38:15,376 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 15:38:15,376 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60965, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60965,179425724688200
+
+2019-11-02 15:38:15,376 INFO send udp packet: 10.0.75.1,60965,179425724688200
+
+2019-11-02 15:38:15,381 INFO received ack: {"type": "push-ack", "lastRefTime":"179425724688200", "data":""} from: 10.0.75.1:, cost: 60965 ms, unacked: 5, total push: 0
+
+2019-11-02 15:38:32,310 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 15:38:32,311 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60965, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60965,179442658772700
+
+2019-11-02 15:38:32,311 INFO send udp packet: 10.0.75.1,60965,179442658772700
+
+2019-11-02 15:38:32,327 INFO received ack: {"type": "push-ack", "lastRefTime":"179442658772700", "data":""} from: 10.0.75.1:, cost: 60965 ms, unacked: 16, total push: 0
+
+2019-11-02 15:40:04,543 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 15:40:04,543 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60965, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60965,179534891111700
+
+2019-11-02 15:40:04,543 INFO send udp packet: 10.0.75.1,60965,179534891111700
+
+2019-11-02 15:40:04,546 INFO received ack: {"type": "push-ack", "lastRefTime":"179534891111700", "data":""} from: 10.0.75.1:, cost: 60965 ms, unacked: 3, total push: 0
+
+2019-11-02 15:41:38,031 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 15:41:38,031 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60965, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60965,179628379237900
+
+2019-11-02 15:41:38,031 INFO send udp packet: 10.0.75.1,60965,179628379237900
+
+2019-11-02 15:41:38,036 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 15:41:38,036 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:55090, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,55090,179628384202000
+
+2019-11-02 15:41:38,036 INFO send udp packet: 10.0.75.1,55090,179628384202000
+
+2019-11-02 15:41:48,032 INFO retry to push data, key: 10.0.75.1,60965,179628379237900
+
+2019-11-02 15:41:48,032 INFO send udp packet: 10.0.75.1,60965,179628379237900
+
+2019-11-02 15:41:48,038 INFO retry to push data, key: 10.0.75.1,55090,179628384202000
+
+2019-11-02 15:41:48,038 INFO send udp packet: 10.0.75.1,55090,179628384202000
+
+2019-11-02 15:41:58,033 INFO retry to push data, key: 10.0.75.1,60965,179628379237900
+
+2019-11-02 15:41:58,033 WARN max re-push times reached, retry times 2, key: 10.0.75.1,60965,179628379237900
+
+2019-11-02 15:41:58,039 INFO retry to push data, key: 10.0.75.1,55090,179628384202000
+
+2019-11-02 15:41:58,039 WARN max re-push times reached, retry times 2, key: 10.0.75.1,55090,179628384202000
+
+2019-11-02 16:17:03,624 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 16:17:26,893 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 16:17:26,894 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60879, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60879,181777241233100
+
+2019-11-02 16:17:26,894 INFO send udp packet: 10.0.75.1,60879,181777241233100
+
+2019-11-02 16:17:26,919 INFO received ack: {"type": "push-ack", "lastRefTime":"181777241233100", "data":""} from: 10.0.75.1:, cost: 60879 ms, unacked: 25, total push: 0
+
+2019-11-02 16:25:51,582 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 16:25:51,582 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60879, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60879,182281930472000
+
+2019-11-02 16:25:51,582 INFO send udp packet: 10.0.75.1,60879,182281930472000
+
+2019-11-02 16:25:51,584 INFO received ack: {"type": "push-ack", "lastRefTime":"182281930472000", "data":""} from: 10.0.75.1:, cost: 60879 ms, unacked: 2, total push: 0
+
+2019-11-02 16:26:10,801 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 16:26:10,801 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60879, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60879,182301149498600
+
+2019-11-02 16:26:10,801 INFO send udp packet: 10.0.75.1,60879,182301149498600
+
+2019-11-02 16:26:10,805 INFO received ack: {"type": "push-ack", "lastRefTime":"182301149498600", "data":""} from: 10.0.75.1:, cost: 60879 ms, unacked: 4, total push: 0
+
+2019-11-02 16:52:13,913 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 16:52:13,913 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:60879, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,60879,183864261461400
+
+2019-11-02 16:52:13,913 INFO send udp packet: 10.0.75.1,60879,183864261461400
+
+2019-11-02 16:52:13,924 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 16:52:13,924 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:62720, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,62720,183864272580400
+
+2019-11-02 16:52:13,924 INFO send udp packet: 10.0.75.1,62720,183864272580400
+
+2019-11-02 16:52:23,914 INFO retry to push data, key: 10.0.75.1,60879,183864261461400
+
+2019-11-02 16:52:23,914 INFO send udp packet: 10.0.75.1,60879,183864261461400
+
+2019-11-02 16:52:23,926 INFO retry to push data, key: 10.0.75.1,62720,183864272580400
+
+2019-11-02 16:52:23,926 INFO send udp packet: 10.0.75.1,62720,183864272580400
+
+2019-11-02 16:52:33,917 INFO retry to push data, key: 10.0.75.1,60879,183864261461400
+
+2019-11-02 16:52:33,917 WARN max re-push times reached, retry times 2, key: 10.0.75.1,60879,183864261461400
+
+2019-11-02 16:52:33,927 INFO retry to push data, key: 10.0.75.1,62720,183864272580400
+
+2019-11-02 16:52:33,927 WARN max re-push times reached, retry times 2, key: 10.0.75.1,62720,183864272580400
+
+2019-11-02 16:53:51,658 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 16:54:11,984 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 16:54:11,984 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:56407, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,56407,183982332419400
+
+2019-11-02 16:54:11,984 INFO send udp packet: 10.0.75.1,56407,183982332419400
+
+2019-11-02 16:54:12,004 INFO received ack: {"type": "push-ack", "lastRefTime":"183982332419400", "data":""} from: 10.0.75.1:, cost: 56407 ms, unacked: 20, total push: 0
+
+2019-11-02 16:57:49,807 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 16:58:32,440 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 16:58:32,440 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:56407, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,56407,184242789148100
+
+2019-11-02 16:58:32,441 INFO send udp packet: 10.0.75.1,56407,184242789148100
+
+2019-11-02 16:58:32,443 INFO received ack: {"type": "push-ack", "lastRefTime":"184242789148100", "data":""} from: 10.0.75.1:, cost: 56407 ms, unacked: 2, total push: 0
+
+2019-11-02 16:58:58,783 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 16:58:58,784 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:56407, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,56407,184269131985900
+
+2019-11-02 16:58:58,784 INFO send udp packet: 10.0.75.1,56407,184269131985900
+
+2019-11-02 16:58:58,789 INFO received ack: {"type": "push-ack", "lastRefTime":"184269131985900", "data":""} from: 10.0.75.1:, cost: 56407 ms, unacked: 5, total push: 0
+
+2019-11-02 16:59:40,734 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 16:59:40,734 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:56407, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,56407,184311082497900
+
+2019-11-02 16:59:40,734 INFO send udp packet: 10.0.75.1,56407,184311082497900
+
+2019-11-02 16:59:40,741 INFO received ack: {"type": "push-ack", "lastRefTime":"184311082497900", "data":""} from: 10.0.75.1:, cost: 56407 ms, unacked: 7, total push: 0
+
+2019-11-02 17:00:31,223 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 17:00:31,224 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:56407, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,56407,184361571327300
+
+2019-11-02 17:00:31,224 INFO send udp packet: 10.0.75.1,56407,184361571327300
+
+2019-11-02 17:00:31,231 INFO received ack: {"type": "push-ack", "lastRefTime":"184361571327300", "data":""} from: 10.0.75.1:, cost: 56407 ms, unacked: 6, total push: 0
+
+2019-11-02 17:18:59,902 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 17:18:59,902 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:50389, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,50389,185470250261000
+
+2019-11-02 17:18:59,902 INFO send udp packet: 10.0.75.1,50389,185470250261000
+
+2019-11-02 17:18:59,902 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:53277, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,53277,185470250261000
+
+2019-11-02 17:18:59,902 INFO send udp packet: 10.0.75.1,53277,185470250261000
+
+2019-11-02 17:18:59,909 INFO received ack: {"type": "push-ack", "lastRefTime":"185470250261000", "data":""} from: 10.0.75.1:, cost: 53277 ms, unacked: 7, total push: 1
+
+2019-11-02 17:18:59,911 INFO received ack: {"type": "push-ack", "lastRefTime":"185470250261000", "data":""} from: 10.0.75.1:, cost: 50389 ms, unacked: 9, total push: 0
+
+2019-11-02 17:21:52,594 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 17:21:52,594 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:50389, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,50389,185642942692300
+
+2019-11-02 17:21:52,594 INFO send udp packet: 10.0.75.1,50389,185642942692300
+
+2019-11-02 17:21:52,594 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:53277, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,53277,185642942692300
+
+2019-11-02 17:21:52,594 INFO send udp packet: 10.0.75.1,53277,185642942692300
+
+2019-11-02 17:21:52,598 INFO received ack: {"type": "push-ack", "lastRefTime":"185642942692300", "data":""} from: 10.0.75.1:, cost: 53277 ms, unacked: 4, total push: 1
+
+2019-11-02 17:21:52,599 INFO received ack: {"type": "push-ack", "lastRefTime":"185642942692300", "data":""} from: 10.0.75.1:, cost: 50389 ms, unacked: 5, total push: 0
+
+2019-11-02 17:41:09,047 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 17:41:09,047 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:57273, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,57273,186799395567600
+
+2019-11-02 17:41:09,048 INFO send udp packet: 10.0.75.1,57273,186799395567600
+
+2019-11-02 17:41:09,059 INFO received ack: {"type": "push-ack", "lastRefTime":"186799395567600", "data":""} from: 10.0.75.1:, cost: 57273 ms, unacked: 11, total push: 0
+
+2019-11-02 17:41:53,832 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 17:41:53,832 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:57273, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,57273,186844180025000
+
+2019-11-02 17:41:53,832 INFO send udp packet: 10.0.75.1,57273,186844180025000
+
+2019-11-02 17:41:53,838 INFO received ack: {"type": "push-ack", "lastRefTime":"186844180025000", "data":""} from: 10.0.75.1:, cost: 57273 ms, unacked: 6, total push: 0
+
+2019-11-02 17:44:45,254 INFO DEFAULT_GROUP@@spring-cloud-gateway is changed, add it to push queue.
+
+2019-11-02 17:44:45,254 INFO serviceName: DEFAULT_GROUP@@spring-cloud-gateway changed, schedule push for: 10.0.75.1:57273, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,57273,187015602045900
+
+2019-11-02 17:44:45,254 INFO send udp packet: 10.0.75.1,57273,187015602045900
+
+2019-11-02 17:44:45,256 INFO received ack: {"type": "push-ack", "lastRefTime":"187015602045900", "data":""} from: 10.0.75.1:, cost: 57273 ms, unacked: 2, total push: 0
+
+2019-11-02 17:44:56,917 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-11-02 17:44:56,917 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:51692, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,51692,187027265502700
+
+2019-11-02 17:44:56,917 INFO send udp packet: 10.0.75.1,51692,187027265502700
+
+2019-11-02 17:44:56,918 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:53277, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,53277,187027265502700
+
+2019-11-02 17:44:56,918 INFO send udp packet: 10.0.75.1,53277,187027265502700
+
+2019-11-02 17:44:56,924 INFO received ack: {"type": "push-ack", "lastRefTime":"187027265502700", "data":""} from: 10.0.75.1:, cost: 53277 ms, unacked: 6, total push: 1
+
+2019-11-02 17:44:56,926 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-11-02 17:44:56,926 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:57273, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,57273,187027274629900
+
+2019-11-02 17:44:56,926 INFO send udp packet: 10.0.75.1,57273,187027274629900
+
+2019-11-02 17:44:56,927 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:51692, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,51692,187027274629900
+
+2019-11-02 17:44:56,927 INFO send udp packet: 10.0.75.1,51692,187027274629900
+
+2019-11-02 17:44:56,932 INFO received ack: {"type": "push-ack", "lastRefTime":"187027274629900", "data":""} from: 10.0.75.1:, cost: 57273 ms, unacked: 6, total push: 2
+
+2019-11-02 17:45:06,918 INFO retry to push data, key: 10.0.75.1,51692,187027265502700
+
+2019-11-02 17:45:06,918 INFO send udp packet: 10.0.75.1,51692,187027265502700
+
+2019-11-02 17:45:06,928 INFO retry to push data, key: 10.0.75.1,51692,187027274629900
+
+2019-11-02 17:45:06,928 INFO send udp packet: 10.0.75.1,51692,187027274629900
+
+2019-11-02 17:45:16,919 INFO retry to push data, key: 10.0.75.1,51692,187027265502700
+
+2019-11-02 17:45:16,919 WARN max re-push times reached, retry times 2, key: 10.0.75.1,51692,187027265502700
+
+2019-11-02 17:45:16,929 INFO retry to push data, key: 10.0.75.1,51692,187027274629900
+
+2019-11-02 17:45:16,929 WARN max re-push times reached, retry times 2, key: 10.0.75.1,51692,187027274629900
+

@@ -22,6 +22,7 @@
         <module>spring-cloud-other</module>
         <module>spring-cloud-common</module>
         <module>spring-cloud-gateway</module>
+        <module>spring-cloud-admin</module>
     </modules>
 
     <properties>
@@ -78,6 +79,12 @@
 <!--            <scope>runtime</scope>-->
 <!--            <optional>true</optional>-->
 <!--        </dependency>-->
+<!--        jdk11缺少的包-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0.1</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

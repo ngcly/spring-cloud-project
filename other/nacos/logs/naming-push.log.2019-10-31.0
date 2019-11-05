@@ -1,0 +1,156 @@
+2019-10-31 14:17:40,103 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 14:20:03,563 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-10-31 14:35:11,383 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-10-31 14:35:12,641 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 16:50:06,856 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 16:53:58,320 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 16:56:44,253 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 16:57:56,678 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 16:57:56,679 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:50283, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,50283,11399443227200
+
+2019-10-31 16:57:56,679 INFO send udp packet: 10.0.75.1,50283,11399443227200
+
+2019-10-31 16:58:06,684 INFO retry to push data, key: 10.0.75.1,50283,11399443227200
+
+2019-10-31 16:58:06,687 INFO send udp packet: 10.0.75.1,50283,11399443227200
+
+2019-10-31 16:58:07,239 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 16:58:16,689 INFO retry to push data, key: 10.0.75.1,50283,11399443227200
+
+2019-10-31 16:58:16,689 WARN max re-push times reached, retry times 2, key: 10.0.75.1,50283,11399443227200
+
+2019-10-31 16:59:17,830 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-10-31 16:59:17,831 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:50284, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,50284,11480595283300
+
+2019-10-31 16:59:17,831 INFO send udp packet: 10.0.75.1,50284,11480595283300
+
+2019-10-31 16:59:17,845 INFO received ack: {"type": "push-ack", "lastRefTime":"11480595283300", "data":""} from: 10.0.75.1:, cost: 50284 ms, unacked: 13, total push: 0
+
+2019-10-31 17:27:18,797 INFO DEFAULT_GROUP@@spring-cloud-other is changed, add it to push queue.
+
+2019-10-31 17:27:18,797 INFO serviceName: DEFAULT_GROUP@@spring-cloud-other changed, schedule push for: 10.0.75.1:50284, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,50284,13161562118500
+
+2019-10-31 17:27:18,797 INFO send udp packet: 10.0.75.1,50284,13161562118500
+
+2019-10-31 17:27:18,805 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:27:18,805 INFO serviceName: DEFAULT_GROUP@@spring-cloud-user changed, schedule push for: 10.0.75.1:52505, agent: Nacos-Java-Client:v1.1.1, key: 10.0.75.1,52505,13161570116300
+
+2019-10-31 17:27:18,805 INFO send udp packet: 10.0.75.1,52505,13161570116300
+
+2019-10-31 17:27:28,798 INFO retry to push data, key: 10.0.75.1,50284,13161562118500
+
+2019-10-31 17:27:28,798 INFO send udp packet: 10.0.75.1,50284,13161562118500
+
+2019-10-31 17:27:28,807 INFO retry to push data, key: 10.0.75.1,52505,13161570116300
+
+2019-10-31 17:27:28,807 INFO send udp packet: 10.0.75.1,52505,13161570116300
+
+2019-10-31 17:27:38,799 INFO retry to push data, key: 10.0.75.1,50284,13161562118500
+
+2019-10-31 17:27:38,799 WARN max re-push times reached, retry times 2, key: 10.0.75.1,50284,13161562118500
+
+2019-10-31 17:27:38,813 INFO retry to push data, key: 10.0.75.1,52505,13161570116300
+
+2019-10-31 17:27:38,813 WARN max re-push times reached, retry times 2, key: 10.0.75.1,52505,13161570116300
+
+2019-10-31 17:39:11,403 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:39:43,879 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:39:55,921 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:40:19,462 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:41:55,617 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:44:14,596 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:44:24,538 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:54:25,711 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 17:55:05,334 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:00:25,721 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:00:35,760 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:06:11,037 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:06:21,404 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:10:22,596 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:10:32,554 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:11:16,807 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:11:26,142 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:12:36,957 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:14:09,400 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:14:19,942 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:21:22,028 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:21:32,166 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:32:54,155 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:33:05,713 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:37:59,912 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:38:10,421 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:38:39,092 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:38:49,271 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:43:36,107 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:43:46,080 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:45:56,977 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:55:04,568 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:55:13,862 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:58:01,501 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 18:58:12,636 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 19:28:19,335 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 19:30:31,220 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 19:57:31,420 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:00:00,885 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:00:12,305 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:05:07,558 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:10:19,709 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:13:28,940 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:44:52,773 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+
+2019-10-31 20:56:50,954 INFO DEFAULT_GROUP@@spring-cloud-user is changed, add it to push queue.
+

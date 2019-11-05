@@ -24,10 +24,14 @@ spring:
           uri: lb://spring-cloud-user
           predicates:
             - Path=/user/**
+          filters:
+            - StripPrefix=1
         - id: spring-cloud-other
           uri: lb://spring-cloud-other
           predicates:
             - Path=/other/**
+          filters:
+            - StripPrefix=1
 
 dubbo:
   protocol:

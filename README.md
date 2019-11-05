@@ -53,10 +53,8 @@ spring-cloud-project -- 根目录
 ├── spring-cloud-common -- 通用工具公共模块
 ├── spring-cloud-gateway -- 路由网关服务
 ├── spring-cloud-other -- 其他 示例服务
-├── spring-cloud-turbine -- 调用实时监控服务
 ├── spring-cloud-user -- 用户认证授权服务
 ├── spring-cloud-vue -- vue 页面端
-├── spring-cloud-zipkin -- 链路追踪服务
 ```
 ### 五、项目运行步骤  
 1. git 下载当前项目，完成后从 IDEA中打开
@@ -64,8 +62,25 @@ spring-cloud-project -- 根目录
 3. 启动 MySql、RabbitMQ、Redis 三个必备服务 和 三个非必需的 ELK(Elasticsearch、Logstash、Kibana) 服务
 4. 创建数据库并执行sql脚本。若要启动 vue 页面端 请首先安装好 node.js
 5. 上述完成后即可开始启动项目服务  
+
+nacos服务启动(win系统)：  
+```
+cd other/nacos/bin  
+startup.cmd
+```  
 Sentinel控制台启动：  
-``java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar``
+```
+cd other
+java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
+```
+设置RocketMQ环境变量 ROCKETMQ_HOME：rocketmq/bin  
+RocketMQ启动(win平台)：  
+`cd other/rocketmq/bin`  
+启动 Name Server：  
+`mqnamesrv.cmd`  
+启动 Broker：  
+`mqbroker.cmd -n localhost:9876`
+
 #### 项目服务启动顺序  
 1. spring-cloud-admin （可选）
 2. spring-cloud-gateway （可选）
