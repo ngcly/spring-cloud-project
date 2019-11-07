@@ -15,10 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @Value("${my.test}")
     private String name;
-    @Value("${cc.test}")
-    private String cn;
-    @Value("${dd.test}")
-    private String dd;
 
     @Autowired
     private MessageChannel output;
@@ -27,6 +23,6 @@ public class TestController {
     @SentinelResource("hey")
     public String echo() {
         output.send(MessageBuilder.withPayload(name).build());
-        return "hello " + name+cn+dd;
+        return "hello " + name;
     }
 }

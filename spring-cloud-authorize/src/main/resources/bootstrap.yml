@@ -1,9 +1,9 @@
 server:
-  port: 8001
+  port: 8003
 
 spring:
   application:
-    name: spring-cloud-user
+    name: spring-cloud-authorize
   cloud:
     nacos:
       discovery:
@@ -21,22 +21,9 @@ spring:
       transport:
         dashboard: localhost:8080
 dubbo:
-  scan:
-    #指定 Dubbo 服务实现类的扫描基准包
-    base-packages: com.cn.user.remote
-  #Dubbo 服务暴露的协议配置，其中子属性 name 为协议名称，port 为协议端口 (-1 表示自增端口，从 20880 开始)
   protocol:
     name: dubbo
     port: -1
   registry:
     #挂载到 Spring Cloud 注册中心
     address: spring-cloud://localhost
-
-security:
-  oauth2:
-    client:
-      client-id: cloud_client
-      client-secret: secret
-      scope: all
-    resource: # 认证中心的check_token 接口地址
-      token-info-uri: http://127.0.0.1:8003/oauth/check_token

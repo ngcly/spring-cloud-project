@@ -1,6 +1,6 @@
-package com.cn.user.config;
+package com.cn.authorize.config;
 
-import com.cn.user.service.UserService;
+import com.cn.authorize.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,13 +28,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private AuthenticationManager authenticationManager;
 
     @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+
+    @Autowired
     private DataSource dataSource;
 
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
-
-    @Autowired
-    private UserService userService;
 
     @Bean
     public RedisTokenStore redisTokenStore() {
@@ -75,7 +75,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .reuseRefreshTokens(true)
                 //配置以生效password模式
                 .authenticationManager(authenticationManager)
-                .userDetailsService(userService)
+                .userDetailsService(userDetailsService)
                 .tokenServices(tokenServices);
     }
 

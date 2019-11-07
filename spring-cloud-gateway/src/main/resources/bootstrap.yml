@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8004
 spring:
   application:
     name: spring-cloud-gateway
@@ -9,9 +9,8 @@ spring:
         server-addr: 127.0.0.1:8848
       config:
         server-addr: 127.0.0.1:8848
+        shared-dataids: common.yml
     sentinel:
-      filter:
-        enabled: false
       transport:
         dashboard: localhost:8080
     gateway:
@@ -32,6 +31,12 @@ spring:
             - Path=/other/**
           filters:
             - StripPrefix=1
+        - id: spring-cloud-authorize
+          uri: lb://spring-cloud-authorize
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
 
 dubbo:
   protocol:
@@ -39,3 +44,8 @@ dubbo:
     port: -1
   registry:
     address: spring-cloud://localhost
+
+#开启sentinel断路器
+feign:
+  sentinel:
+    enabled: true

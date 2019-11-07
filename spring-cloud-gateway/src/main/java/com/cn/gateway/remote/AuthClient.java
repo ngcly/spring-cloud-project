@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author ngcly
  */
-@FeignClient(name = "spring-cloud-user", fallback = UserClient.AuthClientFallback.class)
-public interface UserClient {
+@FeignClient(name = "spring-cloud-authorize", fallback = AuthClient.AuthClientFallback.class)
+public interface AuthClient {
 
     @PostMapping("/oauth/token")
     ResponseEntity<?> getToken(@RequestParam("username") String username, @RequestParam("password") String password,
@@ -24,7 +24,7 @@ public interface UserClient {
                                    @RequestParam("client_id") String clientId, @RequestParam("client_secret") String clientSecret);
 
     @Service
-    class AuthClientFallback implements UserClient {
+    class AuthClientFallback implements AuthClient {
 
         @Override
         public ResponseEntity<?> getToken(String username, String password, String scope, String grant_type, String client_id, String client_secret) {

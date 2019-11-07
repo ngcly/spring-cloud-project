@@ -16,9 +16,11 @@ Spring Cloud Alibaba
 
 | 模块名称 | 端口号 | 功能 |
 |:--|:--|:--|
-| spring-cloud-gateway | 8002 | [网关服务](./spring-cloud-gateway/README.md) |
-| spring-cloud-user | 8006 | [用户服务](./spring-cloud-user/README.md) |
-| spring-cloud-other | 8007 | [其他服务](./spring-cloud-other/README.md) |
+| spring-cloud-user | 8001 | [用户服务](./spring-cloud-user/README.md) |
+| spring-cloud-other | 8002 | [其他服务](./spring-cloud-other/README.md) |
+| spring-cloud-authorize | 8003 | [授权服务](./spring-cloud-authorize/README.md) |
+| spring-cloud-gateway | 8004 | [网关服务](./spring-cloud-gateway/README.md) |
+| spring-cloud-admin | 8005 | [监控服务](./spring-cloud-admin/README.md) |
 | spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |
 | spring-cloud-vue | 8080 | [前端页面](./spring-cloud-vue/README.md) |
 
@@ -85,9 +87,9 @@ RocketMQ启动(win平台)：
 1. spring-cloud-admin （可选）
 2. spring-cloud-gateway （可选）
 3. spring-cloud-zipkin （可选）
-4. spring-cloud-turbine （可选）
-5. spring-cloud-user （可选）
-6. spring-cloud-other （可选）  
+4. spring-cloud-user （可选）
+5. spring-cloud-other （可选）
+6. spring-cloud-authorize （可选）  
 ##### spring-cloud-vue 页面端的启动  
 1. 请先点开idea的 Terminal 调出执行命令窗口
 2. 依次执行以下命令：  

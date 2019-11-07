@@ -23,6 +23,7 @@
         <module>spring-cloud-common</module>
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-admin</module>
+        <module>spring-cloud-authorize</module>
     </modules>
 
     <properties>

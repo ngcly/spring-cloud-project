@@ -1,5 +1,5 @@
 server:
-  port: 8182
+  port: 8002
 spring:
   application:
     name: spring-cloud-other
@@ -12,6 +12,8 @@ spring:
         server-addr: 127.0.0.1:8848
         #指定远程配置文件格式
         file-extension: yml
+        #共享配置文件
+        shared-dataids: common.yml,data.yml
     sentinel:
       transport:
         dashboard: localhost:8080
@@ -25,3 +27,12 @@ dubbo:
   cloud:
     #表示要订阅服务的服务名 多个订阅则用,分隔 或者* 订阅所有
     subscribed-services: spring-cloud-user
+
+security:
+  oauth2:
+    client:
+      client-id: cloud_client
+      client-secret: secret
+      scope: all
+    resource: # 认证中心的check_token 接口地址
+      token-info-uri: http://127.0.0.1:8003/oauth/check_token
