@@ -22,9 +22,9 @@ public class AuthorizeController {
     private ConsumerTokenServices consumerTokenServices;
 
     @GetMapping(value = "/principal")
-    public ResponseEntity principal(Principal principal) {
+    public Principal principal(Principal principal) {
         //获取用户凭证信息
-        return ResponseEntity.ok(principal);
+        return principal;
     }
 
     @DeleteMapping(value = "/revoke")

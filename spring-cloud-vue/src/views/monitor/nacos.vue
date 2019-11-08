@@ -1,16 +1,16 @@
 <template>
   <div class="app-container">
-    <iframe width="100%" frameborder="0" scrolling="auto" :src="url"></iframe>
+    <iframe width="100%" frameborder="0" scrolling="no" :src="url"></iframe>
   </div>
 </template>
 
 <script>
-    import {eureka} from '@/api/constant'
+    import {nacos} from '@/api/constant'
     export default {
-        name: "eureka",
+        name: "nacos",
         data() {
             return {
-                url: eureka
+                url: nacos
             }
         }
     }

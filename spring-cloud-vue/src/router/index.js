@@ -59,14 +59,14 @@ export const constantRoutes = [
   {
     path: '/monitor',
     component: Layout,
-    redirect: '/monitor/eureka',
+    redirect: '/monitor/nacos',
     name: 'Monitor',
     meta: { title: '系统监控', icon: 'example' },
     children: [
       {
-        path: 'eureka',
-        name: 'Eureka',
-        component: () => import('@/views/monitor/eureka'),
+        path: 'nacos',
+        name: 'Nacos',
+        component: () => import('@/views/monitor/nacos'),
         meta: { title: '服务监控', icon: 'eye' }
       },
       {
@@ -76,9 +76,9 @@ export const constantRoutes = [
         meta: { title: '应用监控', icon: 'example' }
       },
       {
-        path: 'hystrix',
-        name: 'Hystrix',
-        component: () => import('@/views/monitor/hystrix'),
+        path: 'sentinel',
+        name: 'Sentinel',
+        component: () => import('@/views/monitor/sentinel'),
         meta: { title: '熔断监控', icon: 'eye-open' }
       },
       {

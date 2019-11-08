@@ -73,7 +73,7 @@ startup.cmd
 Sentinel控制台启动：  
 ```
 cd other
-java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
+java -Dserver.port=8088 -Dcsp.sentinel.dashboard.server=localhost:8088 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
 ```
 设置RocketMQ环境变量 ROCKETMQ_HOME：rocketmq/bin  
 RocketMQ启动(win平台)：  

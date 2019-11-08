@@ -19,7 +19,7 @@ spring:
     # sentinel控制台配置
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: localhost:8088
 dubbo:
   scan:
     #指定 Dubbo 服务实现类的扫描基准包
@@ -38,5 +38,9 @@ security:
       client-id: cloud_client
       client-secret: secret
       scope: all
-    resource: # 认证中心的check_token 接口地址
-      token-info-uri: http://127.0.0.1:8003/oauth/check_token
+    resource:
+      # 认证中心的用户信息地址 资源服务可以获取当前用户信息
+      user-info-uri: http://127.0.0.1:8003/authorize/principal
+      prefer-token-info: false
+      #下面这种方式资源服务只能拿到用户名
+#      token-info-uri:

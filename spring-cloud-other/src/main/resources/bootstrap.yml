@@ -16,7 +16,7 @@ spring:
         shared-dataids: common.yml,data.yml
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: localhost:8088
 
 dubbo:
   protocol:

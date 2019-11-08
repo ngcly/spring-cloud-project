@@ -6,12 +6,12 @@
 </template>
 
 <script>
-    import {hystrix} from '@/api/constant'
+    import {sentinel} from '@/api/constant'
     export default {
-        name: "hystrix",
+        name: "sentinel",
         data() {
             return {
-                url: hystrix
+                url: sentinel
             }
         }
     }

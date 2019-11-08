@@ -19,7 +19,7 @@ spring:
     # sentinel控制台配置
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: localhost:8088
 dubbo:
   protocol:
     name: dubbo

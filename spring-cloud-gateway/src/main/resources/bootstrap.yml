@@ -12,9 +12,17 @@ spring:
         shared-dataids: common.yml
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: localhost:8088
     gateway:
       enabled: true
+      #跨域配置
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - OPTION
+              - POST
       discovery:
         locator:
           lower-case-service-id: true
