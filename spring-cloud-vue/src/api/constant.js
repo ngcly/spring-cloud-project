@@ -4,7 +4,7 @@ import request from '@/utils/request'
 export const nacos = 'http://localhost:8848/nacos'
 
 // Spring Boot Admin
-export const admin = 'http://localhost:8003/'
+export const admin = 'http://localhost:8005/'
 
 // ZipKin
 export const zipkin = 'http://localhost:9411/'

@@ -5,7 +5,7 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
-import { swagger } from '@/api/constant'
+import { nacos,admin,sentinel,swagger } from '@/api/constant'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -57,43 +57,24 @@ export const constantRoutes = [
   },
 
   {
-    path: '/monitor',
+    path: 'external-link',
     component: Layout,
     redirect: '/monitor/nacos',
     name: 'Monitor',
     meta: { title: '系统监控', icon: 'example' },
     children: [
       {
-        path: 'nacos',
-        name: 'Nacos',
-        component: () => import('@/views/monitor/nacos'),
+        path: nacos,
         meta: { title: '服务监控', icon: 'eye' }
       },
       {
-        path: 'admin',
-        name: 'Admin',
-        component: () => import('@/views/monitor/admin'),
+        path: admin,
         meta: { title: '应用监控', icon: 'example' }
       },
       {
-        path: 'sentinel',
-        name: 'Sentinel',
-        component: () => import('@/views/monitor/sentinel'),
+        path: sentinel,
         meta: { title: '熔断监控', icon: 'eye-open' }
       },
-      {
-        path: 'zipkin',
-        name: 'Zipkin',
-        component: () => import('@/views/monitor/zipkin'),
-        meta: { title: '链路追踪', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
       {
         path: swagger,
         meta: { title: 'API文档', icon: 'link' }
