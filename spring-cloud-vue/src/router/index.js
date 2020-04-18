@@ -5,7 +5,7 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
-import { nacos,admin,sentinel,swagger } from '@/api/constant'
+import { nacos,admin,sentinel,swagger,druid } from '@/api/constant'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -74,6 +74,10 @@ export const constantRoutes = [
       {
         path: sentinel,
         meta: { title: '熔断监控', icon: 'eye-open' }
+      },
+      {
+        path: druid,
+        meta: { title: '数据监控', icon: 'link' }
       },
       {
         path: swagger,

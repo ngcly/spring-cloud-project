@@ -1,5 +1,0 @@
-2019-11-01 14:13:58,814|10.0.75.1|spring-cloud-user.yml|DEFAULT_GROUP|null|null|1572588838774|10.0.75.1|persist|pub|-1|cc9096a9a2592418f5c3d72fb7c198bb
-2019-11-01 14:13:58,831|10.0.75.1|spring-cloud-user.yml|DEFAULT_GROUP|null|null|1572588838774|10.0.75.1|notify|ok|53|10.0.75.1:8848
-2019-11-01 14:13:58,905|10.0.75.1|spring-cloud-user.yml|DEFAULT_GROUP|null|null|1572588838774|10.0.75.1|dump|ok|131|21
-2019-11-01 14:14:55,277|10.0.75.1|spring-cloud-user.yml|DEFAULT_GROUP|null|unknown|1572588838774|pull|ok|56503|127.0.0.1
-2019-11-01 14:15:07,833|10.0.75.1|spring-cloud-user.yml|DEFAULT_GROUP|null|unknown|1572588838774|pull|ok|69059|127.0.0.1

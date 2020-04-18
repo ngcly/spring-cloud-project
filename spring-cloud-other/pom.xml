@@ -2,15 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>spring-cloud-project</artifactId>
         <groupId>com.cn</groupId>
         <version>1.0</version>
         <relativePath/>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.cn</groupId>
     <artifactId>other</artifactId>
+    <version>1.0</version>
+    <name>other</name>
+    <description>other module</description>
 
     <dependencies>
         <dependency>
@@ -31,6 +35,15 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>13</source>
+                    <target>13</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

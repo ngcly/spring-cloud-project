@@ -27,17 +27,17 @@ Spring Cloud Alibaba
 ### 一、开发环境
 * JDK 11  
 * gradle 5.4.1  
-* IntelliJ IDEA 2019.2  
+* IntelliJ IDEA 2020.1  
 ### 二、软件工具  
 * MySql 8.0.13  
 * Redis 5.0.2
-* RabbitMQ 3.7.9  
+* RocketMQ 4.7.0 
 * Elasticsearch 7.3.0
 * Logstash 7.3.0
 * Kibana 7.3.0  
 ### 三、组件说明  
 * 注册中心/配置中心：Nacos
-* 负载均衡：Dubbo
+* RPC调用：Dubbo
 * 熔断保护：Sentinel
 * 路由网关：gateway
 * 数据源监控：druid
@@ -61,7 +61,7 @@ spring-cloud-project -- 根目录
 ### 五、项目运行步骤  
 1. git 下载当前项目，完成后从 IDEA中打开
 2. 使用 maven 工具进行项目依赖构建
-3. 启动 MySql、RabbitMQ、Redis 三个必备服务 和 三个非必需的 ELK(Elasticsearch、Logstash、Kibana) 服务
+3. 启动 MySql、RocketMQ、Redis 三个必备服务 和 三个非必需的 ELK(Elasticsearch、Logstash、Kibana) 服务
 4. 创建数据库并执行sql脚本。若要启动 vue 页面端 请首先安装好 node.js
 5. 上述完成后即可开始启动项目服务  
 
@@ -84,12 +84,11 @@ RocketMQ启动(win平台)：
 `mqbroker.cmd -n localhost:9876`
 
 #### 项目服务启动顺序  
-1. spring-cloud-admin （可选）
-2. spring-cloud-gateway （可选）
-3. spring-cloud-zipkin （可选）
-4. spring-cloud-user （可选）
-5. spring-cloud-other （可选）
-6. spring-cloud-authorize （可选）  
+1. spring-cloud-gateway
+2. spring-cloud-user
+3. spring-cloud-other
+4. spring-cloud-authorize
+5. spring-cloud-admin （可选）
 ##### spring-cloud-vue 页面端的启动  
 1. 请先点开idea的 Terminal 调出执行命令窗口
 2. 依次执行以下命令：  

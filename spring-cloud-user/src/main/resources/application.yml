@@ -1,3 +1,4 @@
+## 以下配置内容写到 nacos 配置里 以便动态修改
 ## 配置rocketmq的nameserver地址
 #spring:
 #  cloud:

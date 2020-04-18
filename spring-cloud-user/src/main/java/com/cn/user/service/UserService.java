@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     public SysUser getUser(String username){
         SysUser user = userRepository.findByUsername(username).orElse(null);

@@ -9,10 +9,12 @@ spring:
         server-addr: 127.0.0.1:8848
       config:
         server-addr: 127.0.0.1:8848
-        shared-dataids: common.yml
+        shared-configs[0]: common.yml
     sentinel:
       transport:
         dashboard: localhost:8088
+      filter:
+        enabled: false
     gateway:
       enabled: true
       #跨域配置
