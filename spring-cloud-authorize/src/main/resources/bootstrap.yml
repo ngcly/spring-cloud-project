@@ -15,9 +15,6 @@ spring:
         #共享配置文件
         shared-configs[0]: data.yml
         shared-configs[1]: common.yml
-        #共享配置文件支持刷新
-        shared-configs[x]:
-          refresh: true
     # sentinel控制台配置
     sentinel:
       transport:
