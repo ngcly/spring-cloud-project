@@ -9,8 +9,9 @@ Spring Cloud Alibaba
 
 | 依赖 | 版本 |
 |:--|:--|
-| Spring Boot | 2.1.9.RELEASE |
-| Spring Cloud | Greenwich.RS3 |
+| Spring Boot | 2.2.6.RELEASE |
+| Spring Cloud | Hoxton.SR3 |  
+| Spring-Cloud-Alibaba | 2.2.1.RELEASE |
 
 ## 模块概述
 
@@ -25,7 +26,7 @@ Spring Cloud Alibaba
 | spring-cloud-vue | 8080 | [前端页面](./spring-cloud-vue/README.md) |
 
 ### 一、开发环境
-* JDK 11  
+* JDK 13  
 * gradle 5.4.1  
 * IntelliJ IDEA 2020.1  
 ### 二、软件工具  
@@ -99,9 +100,6 @@ RocketMQ启动(win平台)：
 ```
 ### 六、效果预览
 ![首页](/images/index.png)  
-![注册中心](/images/eureka.png)  
 ![监控中心](/images/admin.png)  
-![熔断监控](/images/turbine.png)  
-![链路追踪](/images/zipkin.png)  
 ![API文档](/images/swagger.png)
 ***
