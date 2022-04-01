@@ -1,15 +1,17 @@
-group 'com.cn'
 description '配置模块'
 
 dependencies {
-   // eureka 客户端
+    // eureka 客户端
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     // 配置中心服务端
     implementation 'org.springframework.cloud:spring-cloud-config-server'
-    // spring boot admin 客户端
-    implementation 'de.codecentric:spring-boot-admin-starter-client'
     // 安全配置
-    implementation 'org.springframework.cloud:spring-cloud-starter-security'
-    // 配置bus 自动刷新
-    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // 配置通知
+    implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
+    // 监视器
+    implementation 'org.springframework.cloud:spring-cloud-config-monitor'
+
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.junit.vintage:junit-vintage-engine'
 }

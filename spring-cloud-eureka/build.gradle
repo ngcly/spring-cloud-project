@@ -1,12 +1,7 @@
-group 'com.cn'
 description '注册中心'
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    //Eureka服务端
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-    //boot 客户端
-    implementation 'de.codecentric:spring-boot-admin-starter-client'
-    //spring security
-    implementation 'org.springframework.cloud:spring-cloud-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
 }

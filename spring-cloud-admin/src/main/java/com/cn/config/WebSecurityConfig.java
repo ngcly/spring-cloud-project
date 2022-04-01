@@ -7,10 +7,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
 /**
- * @author chenning
- * @Classname SecuritySecureConfig
- * @Description springboot admin 安全配置
- * @Date 2019/6/18 15:26
+ * springboot admin 安全配置
+ * @author ngcly
+ * @since 2019/6/18 15:26
  */
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

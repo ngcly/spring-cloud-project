@@ -1,4 +1,3 @@
-group 'com.cn'
 description '链路追踪模块'
 
 ext {
@@ -8,13 +7,7 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'de.codecentric:spring-boot-admin-starter-client'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 
-    implementation "io.zipkin.java:zipkin-server:${zipkinVersion}"
-    runtime "io.zipkin.java:zipkin-autoconfigure-ui:${zipkinVersion}"
-    implementation "io.zipkin.java:zipkin-autoconfigure-collector-rabbitmq:${zipkinVersion}"
-    implementation "io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch:${zipkinVersion}"
-//    implementation "io.zipkin.java:zipkin-autoconfigure-storage-mysql:${zipkinVersion}"
 }

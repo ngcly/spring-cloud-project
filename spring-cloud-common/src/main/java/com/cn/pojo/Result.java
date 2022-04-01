@@ -1,7 +1,6 @@
 package com.cn.pojo;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,15 +12,15 @@ import java.io.Serializable;
  * @Description 返回体
  * @Date 2019/7/4 9:54
  */
-@ApiModel("返回体")
+@Schema(name = "返回体")
 @Getter
 @Setter
 public class Result<T> implements Serializable {
-    @ApiModelProperty(value="状态码")
+    @Schema(name = "状态码")
     private int code;
-    @ApiModelProperty(value="说明信息")
+    @Schema(name = "说明信息")
     private String msg;
-    @ApiModelProperty(value="内容")
+    @Schema(name = "内容")
     private T data;
 
     public Result(){}

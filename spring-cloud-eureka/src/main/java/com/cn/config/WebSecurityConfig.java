@@ -1,9 +1,9 @@
 package com.cn.config;
 
-
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 
 /**
  * @author chenning
@@ -15,7 +15,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().ignoringAntMatchers("/eureka/**").and().headers().frameOptions().disable();
-        super.configure(http);
+        http.sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
+                .and().requestMatchers().antMatchers("/eureka/**")
+                .and().authorizeRequests().antMatchers("/eureka/**")
+                .hasRole("SYSTEM").anyRequest().denyAll()
+                .and()
+                .httpBasic().and().csrf().disable();
     }
 }

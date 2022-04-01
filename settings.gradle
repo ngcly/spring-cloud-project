@@ -1,6 +1,5 @@
 rootProject.name = 'spring-cloud-project'
 include 'spring-cloud-eureka'
-include 'spring-cloud-zuul'
 include 'spring-cloud-config'
 include 'spring-cloud-zipkin'
 include 'spring-cloud-admin'
@@ -9,5 +8,4 @@ include 'spring-cloud-turbine'
 include 'spring-cloud-common'
 include 'spring-cloud-gateway'
 include 'spring-cloud-other'
-include 'spring-cloud-txlcn'
 

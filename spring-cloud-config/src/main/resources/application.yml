@@ -1,0 +1,50 @@
+server:
+  port: 8001
+
+management:
+  endpoints:
+    web:
+      base-path: "/admin"
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      post:
+        enabled: true
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
+    preferIpAddress: true
+  client:
+    service-url:
+      defaultZone: http://ngcly:123456@localhost:8000/eureka/
+    registry-fetch-interval-seconds: 5
+
+spring:
+  application:
+    name: spring-cloud-config
+  security:
+    user:
+      name: ngcly
+      password: 123456
+      roles: SYSTEM
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        # 本地配置文件读取
+        native:
+          searchLocations: classpath:config/
+        # git 远程读取
+#        git:
+#          uri: https://github.com/spring-cloud-samples/config-repo
+#          basedir: target/config
+#          default-label: main

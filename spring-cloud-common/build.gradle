@@ -1,25 +1,24 @@
-group 'com.cn'
 description '通用模块'
 
 dependencies {
-    //implementation 表示当前依赖对其他模块不可见，api 对其他模块可见
     api 'org.springframework.boot:spring-boot-starter-web'
 
     api 'org.springframework.boot:spring-boot-starter-amqp'
-    api 'org.springframework.boot:spring-boot-starter-integration'
-    api 'org.springframework.integration:spring-integration-redis'
-    api 'org.springframework.boot:spring-boot-starter-data-redis'
+    api 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
 
-    api 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    api 'org.springframework.boot:spring-boot-starter-integration'
+    api 'org.springframework.integration:spring-integration-amqp'
+    api 'org.springframework.integration:spring-integration-redis'
+
+    api 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    api 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 
     api 'org.springframework.cloud:spring-cloud-starter-openfeign'
-    api 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+    api 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
 
-    api "io.springfox:springfox-swagger2:${swaggerVersion}"
-    api "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+    api "org.springdoc:springdoc-openapi-ui:1.6.6"
+    api "org.springdoc:springdoc-openapi-security:1.6.6"
 
-    api "net.logstash.logback:logstash-logback-encoder:${logbackVersion}"
-
-    api "com.alibaba:fastjson:1.2.58"
+    api 'com.alibaba:fastjson:1.2.80'
 
 }

@@ -1,13 +1,13 @@
-group 'com.cn'
 description 'spring boot admin 监控模块'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-    
+
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    
+
     implementation 'de.codecentric:spring-boot-admin-starter-server'
 
-    implementation 'org.springframework.cloud:spring-cloud-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
 }

@@ -1,8 +1,6 @@
 package com.cn.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -18,7 +16,6 @@ import java.util.Set;
  * @Description 用户实体
  * @Date 2019/7/2 20:45
  */
-@ApiModel
 @Getter
 @Setter
 @Entity
@@ -33,7 +30,6 @@ public class User implements Serializable {
     @Column(name="id")
     private Integer id ;
     @Column(name="username",unique = true)
-    @ApiModelProperty("用户名")
     private String username;       //用户名
     private String password;       //密码
     private String nickName;       //昵称

@@ -3,7 +3,6 @@ package com.cn.exception;
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.oauth2.common.exceptions.InvalidGrantException;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -51,8 +50,6 @@ public class GlobalExceptionHandle {
             return Result.failure(RestCode.HEAD_ERROR);
         } else if (e instanceof BindException){
             return Result.failure(400, ((BindException) e).getBindingResult().getAllErrors().get(0).getDefaultMessage());
-        } else if (e instanceof InvalidGrantException){
-            return Result.failure(RestCode.USER_ERR);
         } else if (e instanceof GlobalException){
             return Result.failure(((GlobalException) e).getCode(),e.getMessage());
         } else {

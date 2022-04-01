@@ -1,23 +1,22 @@
 package com.cn;
 
-import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 配置服务启动类
  * @author ngcly
- * 断路器聚合监控服务启动类
- * @since 2019/6/22 15:39
+ * @since 2019/6/14 16:26
  */
 @Configuration
 @EnableAutoConfiguration
-@EnableTurbineStream
 @EnableDiscoveryClient
-public class TurbineApplication {
-
+@EnableConfigServer
+public class ConfigServerApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(TurbineApplication.class).web(WebApplicationType.NONE).run(args);
+        SpringApplication.run(ConfigServerApplication.class, args);
     }
 }

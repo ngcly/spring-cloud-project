@@ -1,32 +1,18 @@
-group = 'com.cn'
-version = '0.1'
-
-buildscript { //构建脚本
-    //定义版本号
-    ext {
-        springBootVersion="2.1.7.RELEASE"
-    }
-    repositories {//jar包仓库
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url "https://plugins.gradle.org/m2/" }
-        mavenCentral()
-    }
+buildscript {
+    ext { springBootVersion="2.6.5" }
+    repositories { mavenCentral() }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
     }
 }
 
 allprojects {
     apply plugin: 'idea'
     apply plugin: 'java'
-    // 解决api命令报错问题
     apply plugin: 'java-library'
-//    idea {
-//        module {
-//            inheritOutputDirs = true
-//        }
-//    }
+
+    group = 'com.cn'
+    version = '0.1'
 }
 
 subprojects {
@@ -36,47 +22,29 @@ subprojects {
     sourceCompatibility = '11'
 
     repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url "https://plugins.gradle.org/m2/" }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring/'
+        }
+        mavenLocal()
         mavenCentral()
     }
 
-    sourceSets {
-        main {
-            java {
-                srcDirs = ['src/main/java']
-            }
-        }
-        test {
-            java {
-                srcDirs = ['src/test/java']
-            }
-        }
-    }
-    
     ext {
-        springBootAdminVersion = '2.1.5'
-        springCloudVersion = 'Greenwich.SR2'
-
-        swaggerVersion = '2.9.2'
-        druidVersion = '1.1.17'
-        logbackVersion = '6.1'
-        txlcnVersion = '5.0.2.RELEASE'
+        set('springCloudVersion', "2021.0.1")
+        set('springBootAdminVersion', "2.6.2")
     }
+
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-//        jdk11 启用jaxb
-        implementation 'javax.xml.bind:jaxb-api:2.3.0'
-        implementation 'com.sun.xml.bind:jaxb-impl:2.3.0'
-        implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.0'
-        implementation 'javax.activation:activation:1.1.1'
-
-        runtime 'org.springframework.boot:spring-boot-devtools'
+        developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
@@ -87,9 +55,15 @@ subprojects {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
         }
     }
+
+    jar {
+        enabled = true
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
 }
 
-//springboot2 这里一定得要 在多模块下，不然编译失败，因为不会把依赖模块给打包。
-jar {
-    enabled = true
-}
+
+
