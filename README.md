@@ -5,7 +5,7 @@
 
 ## 核心依赖
 
-SpringCloud 分布式微服务基础架构采用的是当前官网最新的版本。
+SpringCloud 微服务基础架构采用的是当前官网最新的版本。
 
 | 依赖 | 版本 |  
 |:--|:--|  
@@ -19,11 +19,9 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 | spring-cloud-eureka | 8000 | [注册中心](./spring-cloud-eureka/README.md) |   
 | spring-cloud-config | 8001 | [配置中心](./spring-cloud-config/README.md) |   
 | spring-cloud-gateway | 8002 | [网关服务](./spring-cloud-gateway/README.md) |   
-| spring-cloud-admin | 8003 | [监控中心](./spring-cloud-admin/README.md) |   
-| spring-cloud-zipkin | 9411 | [链路追踪](./spring-cloud-zipkin/README.md) |   
-| spring-cloud-turbine | 8005 | [聚合监控](./spring-cloud-turbine/README.md) |   
-| spring-cloud-user | 8006 | [用户服务](./spring-cloud-user/README.md) |   
-| spring-cloud-other | 8007 | [其他服务](./spring-cloud-other/README.md) |   
+| spring-cloud-admin | 8003 | [监控中心](./spring-cloud-admin/README.md) |
+| spring-cloud-user | 8004 | [用户服务](./spring-cloud-user/README.md) |   
+| spring-cloud-other | 8005 | [其他服务](./spring-cloud-other/README.md) |   
 | spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |   
 | spring-cloud-vue | 8080 | [前端页面](./spring-cloud-vue/README.md) |
 
@@ -31,6 +29,7 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 * JDK 11  
 * gradle 7.2  
 * IntelliJ IDEA 2022.2  
+
 ### 二、软件工具  
 * MySql 8.0.13  
 * Redis 5.0.2
@@ -38,23 +37,25 @@ SpringCloud 分布式微服务基础架构采用的是当前官网最新的版�
 * Elasticsearch 7.3.0
 * Logstash 7.3.0
 * Kibana 7.3.0  
+
 ### 三、组件说明  
 * 注册中心：Eureka  
 * 配置中心：spring cloud config -> native / git
-* 消息总线：spring cloud bus
-* 负载均衡：feign / ribbon
-* 熔断保护：hystrix
-* 路由网关：gateway
+* 消息总线：spring cloud steam
+* 服务调用：loadbalancer / feign
+* 熔断降级：resilience4j
+* 服务网关：gateway
 * 服务监控：spring boot admin
-* 集群监控：turbine
-* 链路追踪：zipkin
+* 链路追踪：sleuth / zipkin
 * 数据源监控：druid
 * ORM 框架：JPA / Hibernate
 * 安全认证：spring security oauth2
-* 在线文档：swagger2
-* 分布式锁：spring-integration-redis
+* 在线文档：spring doc
+* 分布式锁：redission
 * 消息队列：RabbitMQ
 * 日志处理：ELK (Elasticsearch、Logstash、Kibana)
+* 分布式事务：采用MQ 实现最终一致性
+
 ### 四、项目结构  
 ```
 spring-cloud-project -- 根目录
@@ -64,10 +65,8 @@ spring-cloud-project -- 根目录
 ├── spring-cloud-eureka -- 注册发现服务
 ├── spring-cloud-gateway -- 路由网关服务
 ├── spring-cloud-other -- 其他 示例服务
-├── spring-cloud-turbine -- 调用实时监控服务
 ├── spring-cloud-user -- 用户认证授权服务
 ├── spring-cloud-vue -- vue 页面端
-├── spring-cloud-zipkin -- 链路追踪服务
 ```
 
 ### 五、项目运行步骤  
@@ -84,9 +83,8 @@ spring-cloud-project -- 根目录
 3. spring-cloud-admin （可选）
 4. spring-cloud-gateway （可选）
 5. spring-cloud-zipkin （可选）
-6. spring-cloud-turbine （可选）
-7. spring-cloud-user （可选）
-8. spring-cloud-other （可选）  
+6. spring-cloud-user （可选）
+7. spring-cloud-other （可选）  
 
 ##### spring-cloud-vue 页面端的启动  
 1. 请先点开idea的 Terminal 调出执行命令窗口
@@ -100,8 +98,7 @@ spring-cloud-project -- 根目录
 ### 六、效果预览
 ![首页](/images/index.png)  
 ![注册中心](/images/eureka.png)  
-![监控中心](/images/admin.png)  
-![熔断监控](/images/turbine.png)  
+![监控中心](/images/admin.png)
 ![链路追踪](/images/zipkin.png)  
 ![API文档](/images/swagger.png)
 

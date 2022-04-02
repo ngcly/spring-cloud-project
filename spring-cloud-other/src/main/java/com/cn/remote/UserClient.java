@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
- * @author chenning
- * @Classname AuthClient
- * @Description 远程调用授权服务
- * @Date 2019/7/17 9:12
+ * 远程调用授权服务
+ * @author ngcly
+ * @since 2019/7/17 9:12
  */
 @FeignClient(name = "spring-cloud-user", fallback = UserClient.AuthClientFallback.class)
 public interface UserClient {

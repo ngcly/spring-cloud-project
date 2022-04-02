@@ -34,7 +34,6 @@ spring:
     user:
       name: ngcly
       password: 123456
-      roles: SYSTEM
   profiles:
     active: native
   cloud:

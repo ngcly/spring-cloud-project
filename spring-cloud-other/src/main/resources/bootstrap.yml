@@ -58,25 +58,6 @@ management:
   endpoint:
     health:
       show-details: always
-
 feign:
-  hystrix:
+  circuitbreaker:
     enabled: true
-
-#lcn事务管理器ip端口
-tx-lcn:
-  client:
-    #TM 集群的情况下可以写多个地址，逗号隔开
-    manager-address: 127.0.0.1:8070
-    # 是否启动LCN负载均衡策略(优化选项，开启与否，功能不受影响)
-  ribbon:
-    loadbalancer:
-      dtx:
-        enabled: true
-  # 开启日志,默认为false
-  logger:
-    enabled: true
-    driver-class-name: ${spring.datasource.driver-class-name}
-    jdbc-url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}

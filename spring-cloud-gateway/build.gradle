@@ -1,9 +1,5 @@
 description '网关模块'
 
-configurations {
-    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
-    implementation.exclude group: 'org.springframework.cloud', module: 'spring-cloud-starter-oauth2'
-}
 dependencies {
     implementation project(':spring-cloud-common')
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
