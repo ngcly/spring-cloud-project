@@ -7,10 +7,9 @@ import org.springframework.context.annotation.Primary;
 import reactor.core.publisher.Mono;
 
 /**
- * @author chenning
- * @Classname RateLimiter
- * @Description 路由限流配置
- * @Date 2019/8/5 12:14
+ * 路由限流配置
+ * @author ngcly
+ * @since 2019/8/5 12:14
  */
 @Configuration
 public class RateLimiter {

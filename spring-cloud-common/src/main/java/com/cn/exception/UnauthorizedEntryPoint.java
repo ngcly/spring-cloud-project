@@ -1,6 +1,5 @@
 package com.cn.exception;
 
-import com.alibaba.fastjson.JSON;
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
 import org.springframework.http.HttpStatus;
@@ -22,18 +21,18 @@ import java.io.PrintWriter;
 public class UnauthorizedEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        response.setContentType("application/json;charset=utf-8");
-        RestCode restCode;
-        if(HttpStatus.NOT_FOUND.value() == response.getStatus()){
-            restCode = RestCode.NOT_FOUND;
-        } else {
-            restCode = RestCode.UNAUTHEN;
-        }
-        PrintWriter out = response.getWriter();
-
-        out.write(JSON.toJSON(Result.failure(restCode)).toString());
-        out.flush();
-        out.close();
+//        response.setContentType("application/json;charset=utf-8");
+//        RestCode restCode;
+//        if(HttpStatus.NOT_FOUND.value() == response.getStatus()){
+//            restCode = RestCode.NOT_FOUND;
+//        } else {
+//            restCode = RestCode.UNAUTHEN;
+//        }
+//        PrintWriter out = response.getWriter();
+//
+//        out.write(JSON.toJSON(Result.failure(restCode)).toString());
+//        out.flush();
+//        out.close();
     }
 
 }

@@ -8,8 +8,6 @@ spring:
       name: ngcly
       password: 123456
       roles: SYSTEM
-  config:
-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
 
 eureka:
   instance:

@@ -1,6 +1,15 @@
 # Spring-Cloud-Project 分布式微服务项目
 
-
+微服务核心组件说明：  
+* 注册中心：  
+* 配置中心：  
+* 网关中心：
+* 服务调用：  
+* 熔断降级：
+* 链路追踪：
+* 日志中心：
+* 分布式事务：
+* 服务监控：
 > 相关内容还在摸索中...
 
 ## 核心依赖
@@ -19,7 +28,7 @@ SpringCloud 微服务基础架构采用的是当前官网最新的版本。
 | spring-cloud-eureka | 8000 | [注册中心](./spring-cloud-eureka/README.md) |   
 | spring-cloud-config | 8001 | [配置中心](./spring-cloud-config/README.md) |   
 | spring-cloud-gateway | 8002 | [网关服务](./spring-cloud-gateway/README.md) |   
-| spring-cloud-admin | 8003 | [监控中心](./spring-cloud-admin/README.md) |
+| spring-cloud-admin | 8003 | [监控中心](./spring-cloud-admin/README.md) |  
 | spring-cloud-user | 8004 | [用户服务](./spring-cloud-user/README.md) |   
 | spring-cloud-other | 8005 | [其他服务](./spring-cloud-other/README.md) |   
 | spring-cloud-common | 无 | [公共模块](./spring-cloud-common/README.md) |   

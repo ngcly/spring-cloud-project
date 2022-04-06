@@ -1,8 +1,8 @@
 package com.cn.amqp;
 
-import com.alibaba.fastjson.JSONObject;
 import com.cn.config.RabbitConfig;
 import com.cn.pojo.MqMsgDO;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * @author chenning
@@ -48,21 +47,21 @@ public class MqReceive {
     @RabbitListener(queues = {RabbitConfig.DELAY_QUEUE})
     public void consumeDelay(MqMsgDO dataDO, Message message, Channel channel) {
         log.info("补偿开始调用接口开始：{}",dataDO.toString());
-        JSONObject result;
+        JsonNode result;
         try {
             switch (dataDO.getMethod()){
                 case GET:
                     Map<String,Object> map = (Map<String, Object>) dataDO.getParam();
                     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://"+dataDO.getServeName()+dataDO.getUrl());
                     map.entrySet().stream().forEach(o -> builder.queryParam(o.getKey(),o.getValue()));
-                    result = restTemplate.getForObject(builder.build().encode().toString(),JSONObject.class,dataDO.getParam());
+                    result = restTemplate.getForObject(builder.build().encode().toString(),JsonNode.class,dataDO.getParam());
                     break;
                 default:
-                    result = restTemplate.postForObject(dataDO.getServeName()+dataDO.getUrl(),dataDO.getParam(),JSONObject.class);
+                    result = restTemplate.postForObject(dataDO.getServeName()+dataDO.getUrl(),dataDO.getParam(),JsonNode.class);
                     break;
             }
-            log.info("补偿调用接口返回：{}",result.toJSONString());
-            if (result!=null&&result.getInteger("code")==0) {
+            log.info("补偿调用接口返回：{}",result.toString());
+            if (result!=null&&result.get("code").asInt()==0) {
                 //通知 MQ 消息已被成功消费,可以ACK了
                 channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
             }else{

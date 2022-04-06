@@ -1,4 +1,4 @@
-package com.cn.remote;
+package com.cn.client;
 
 import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;

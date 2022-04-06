@@ -1,5 +1,5 @@
 rootProject.name = 'spring-cloud-project'
-include 'spring-cloud-eureka'
+include 'spring-cloud-registry'
 include 'spring-cloud-config'
 include 'spring-cloud-zipkin'
 include 'spring-cloud-admin'
