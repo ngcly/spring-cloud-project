@@ -18,8 +18,8 @@ SpringCloud 微服务基础架构采用的是当前官网最新的版本。
 
 | 依赖 | 版本 |  
 |:--|:--|  
-| Spring Boot | 2.6.5 |  
-| Spring Cloud | 2021.0.1 |
+| Spring Boot | 2.6.9 |  
+| Spring Cloud | 2021.0.3 |
 
 ## 模块概述
 
@@ -35,8 +35,8 @@ SpringCloud 微服务基础架构采用的是当前官网最新的版本。
 | spring-cloud-vue | 8080 | [前端页面](./spring-cloud-vue/README.md) |
 
 ### 一、开发环境
-* JDK 11  
-* gradle 7.2  
+* JDK 17  
+* gradle 7.4.1  
 * IntelliJ IDEA 2022.2  
 
 ### 二、软件工具  

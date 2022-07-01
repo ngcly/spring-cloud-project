@@ -53,8 +53,12 @@ public class RabbitConfig {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMandatory(true);
         rabbitTemplate.setMessageConverter(messageConverter());
-        rabbitTemplate.setConfirmCallback((correlationData, ack, cause) -> log.info("消息发送成功:correlationData({}),ack({}),cause({})", correlationData, ack, cause));
-        rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) -> log.info("消息丢失:exchange({}),route({}),replyCode({}),replyText({}),message:{}", exchange, routingKey, replyCode, replyText, message));
+        rabbitTemplate.setConfirmCallback((correlationData, ack, cause) ->
+                log.info("消息发送成功:correlationData({}),ack({}),cause({})", correlationData, ack, cause));
+        rabbitTemplate.setReturnsCallback(returned ->
+                log.info("消息丢失:exchange({}),route({}),replyCode({}),replyText({}),message:{}",
+                        returned.getExchange(), returned.getRoutingKey(), returned.getReplyCode(),
+                        returned.getReplyText(), returned.getMessage()));
         return rabbitTemplate;
     }
 

@@ -2,6 +2,13 @@ server:
   port: 8002
 
 spring:
+  #  必须得放在最前面 不然会报错
+  config:
+    import: optional:configserver:http://ngcly:123456@localhost:8001
+    name: application-gateway,application-config
+  profiles:
+    active: dev
+
   application:
     name: spring-cloud-gateway
   boot:
@@ -18,7 +25,7 @@ spring:
     #网关
     gateway:
       #跨域配置
-      globalcors:
+      global-cors:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "*"
@@ -69,19 +76,6 @@ spring:
                 #使用 SpEL 表达式 对应 bean
                 key-resolver: '#{@ipKeyResolver}'
 
-#    config:
-#      import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
-    config:
-      discovery:
-        #表示使用服务发现组件的config serve，而不是自己指定的
-        enabled: true
-        #指定config serve的 service-id
-        service-id: spring-cloud-config
-      name: application-gateway,application-config
-      username: ngcly
-      password: 123456
-      profile: dev
-
 #注册中心
 eureka:
   client:
@@ -109,3 +103,8 @@ springdoc:
   version: '1.0'
   swagger-ui:
     use-root-path: true
+    urls:
+      - name: user
+        url: /v3/api-docs/user
+      - name: other
+        url: /v3/api-docs/other

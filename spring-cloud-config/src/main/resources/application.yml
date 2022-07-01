@@ -35,7 +35,7 @@ spring:
       name: ngcly
       password: 123456
   profiles:
-    active: native
+    active: native,dev
   cloud:
     config:
       server:
