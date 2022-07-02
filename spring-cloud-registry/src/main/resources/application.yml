@@ -2,7 +2,7 @@ server:
   port: 8000
 spring:
   application:
-    name: spring-cloud-eureka
+    name: discovery-service
   security:
     user:
       name: ngcly

@@ -2,7 +2,7 @@ server:
   port: 8003
 spring:
   application:
-    name: spring-cloud-admin
+    name: monitor-service
   #邮箱配置
 #  mail:
 #    host:

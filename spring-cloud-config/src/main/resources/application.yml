@@ -11,10 +11,6 @@ management:
     env:
       post:
         enabled: true
-logging:
-  level:
-    com.netflix.discovery: 'OFF'
-    org.springframework.cloud: 'DEBUG'
 
 eureka:
   instance:
@@ -29,13 +25,13 @@ eureka:
 
 spring:
   application:
-    name: spring-cloud-config
+    name: config-service
   security:
     user:
       name: ngcly
       password: 123456
   profiles:
-    active: native,dev
+    active: native
   cloud:
     config:
       server:

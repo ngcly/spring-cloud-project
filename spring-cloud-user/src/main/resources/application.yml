@@ -1,13 +1,9 @@
-server:
-  port: 8006
 spring:
-  config:
-    import: optional:configserver:http://ngcly:123456@localhost:8001
-    name: application-config
-  profiles:
-    active: dev
   application:
-    name: spring-cloud-user
+    name: user-service
+  config:
+    import: "optional:configserver:${CONFIG_SERVER:http://ngcly:123456@localhost:8001}"
+
   boot:
     admin:
       client:
@@ -30,12 +26,6 @@ spring:
         enabled: true
   web:
     locale: zh_CN
-eureka:
-  client:
-    service-url:
-      defaultZone: http://ngcly:123456@localhost:8000/eureka
-  instance:
-    prefer-ip-address: true
 
 management:
   endpoints:

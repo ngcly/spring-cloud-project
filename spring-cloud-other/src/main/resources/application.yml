@@ -2,7 +2,10 @@ server:
   port: 8007
 spring:
   application:
-    name: spring-cloud-other
+    name: other-service
+  config:
+    import: "optional:configserver:${CONFIG_SERVER:http://ngcly:123456@localhost:8001}"
+
   boot:
     admin:
       client:
@@ -15,40 +18,12 @@ spring:
   sleuth:
     sampler:
       probability: 1.0
-  # config client 端必须用bootstrap 否则会被默认的给覆盖
-  cloud:
-    config:
-      discovery:
-        #表示使用服务发现组件的config serve，而不是自己指定的
-        enabled: true
-        #指定config serve的 service-id
-        service-id: spring-cloud-config
-      name: application-gateway,application-config
-      username: ngcly
-      password: 123456
-      profile: dev
+
     #消息总线
     bus:
       enabled: true
       trace:
         enabled: true
-
-security:
-  oauth2:
-    client:
-      client-id: cloud_client
-      access-token-uri: http://localhost:8006/oauth/token
-      user-authorization-uri: http://localhost:8006/oauth/authorize
-    resource:
-      user-info-uri: http://localhost:8006/user/principal
-      prefer-token-info: false
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://ngcly:123456@localhost:8000/eureka
-  instance:
-    prefer-ip-address: true
 
 management:
   endpoints:

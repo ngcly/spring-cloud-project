@@ -1,16 +1,8 @@
-server:
-  port: 8002
-
 spring:
-  #  必须得放在最前面 不然会报错
-  config:
-    import: optional:configserver:http://ngcly:123456@localhost:8001
-    name: application-gateway,application-config
-  profiles:
-    active: dev
-
   application:
-    name: spring-cloud-gateway
+    name: gateway-service
+  config:
+    import: "optional:configserver:${CONFIG_SERVER:http://ngcly:123456@localhost:8001}"
   boot:
     admin:
       client:
@@ -22,68 +14,6 @@ spring:
       enabled: true
       trace:
         enabled: true
-    #网关
-    gateway:
-      #跨域配置
-      global-cors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-              - OPTION
-              - GET
-              - POST
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
-      routes:
-        #随便命名 必须保证唯一
-        - id: spring-cloud-user
-          #开头（lb代表从注册中心获取服务） 要转发的的服务地址
-          uri: lb://spring-cloud-user
-          predicates:
-            - Path=/user/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: default
-                fallbackUri: forward://defaultFallback
-            # redis限流  name 必须是 RequestRateLimiter
-            - name: RequestRateLimiter
-              args:
-                #令牌桶填充速率
-                redis-rate-limiter.replenishRate: 1
-                #令牌桶容量 即每秒最多通行5个
-                redis-rate-limiter.burstCapacity: 5
-                #使用 SpEL 表达式 对应 bean
-                key-resolver: '#{@ipKeyResolver}'
-        - id: spring-cloud-other
-          uri: lb://spring-cloud-other
-          predicates:
-            - Path=/other/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: default
-                fallbackUri: forward:/defaultFallback
-            - name: RequestRateLimiter
-              args:
-                #令牌桶填充速率
-                redis-rate-limiter.replenishRate: 10
-                #令牌桶容量 即每秒最多通行5个
-                redis-rate-limiter.burstCapacity: 20
-                #使用 SpEL 表达式 对应 bean
-                key-resolver: '#{@ipKeyResolver}'
-
-#注册中心
-eureka:
-  client:
-    service-url:
-      defaultZone: http://ngcly:123456@localhost:8000/eureka/
-    registry-fetch-interval-seconds: 5
-  instance:
-    prefer-ip-address: true
 
 #gateway 此处必须要设为true feign才会熔断
 feign:
@@ -100,11 +30,6 @@ management:
       show-details: always
 
 springdoc:
-  version: '1.0'
+  version: '@springdoc.version@'
   swagger-ui:
     use-root-path: true
-    urls:
-      - name: user
-        url: /v3/api-docs/user
-      - name: other
-        url: /v3/api-docs/other

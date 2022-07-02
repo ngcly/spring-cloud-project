@@ -1,0 +1,81 @@
+server:
+  port: 8002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://ngcly:123456@localhost:8000/eureka}
+  instance:
+    preferIpAddress: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<path>.*), /$\{path}
+            - name: CircuitBreaker
+              args:
+                name: default
+                fallbackUri: forward://defaultFallback
+            # redis限流  name 必须是 RequestRateLimiter
+            - name: RequestRateLimiter
+              args:
+                #令牌桶填充速率
+                redis-rate-limiter.replenishRate: 1
+                #令牌桶容量 即每秒最多通行5个
+                redis-rate-limiter.burstCapacity: 5
+                #使用 SpEL 表达式 对应 bean
+                key-resolver: '#{@ipKeyResolver}'
+        - id: other-service
+          uri: lb://other-service
+          predicates:
+            - Path=/other/**
+          filters:
+            - RewritePath=/other/(?<path>.*), /$\{path}
+            - name: CircuitBreaker
+              args:
+                name: default
+                fallbackUri: forward:/defaultFallback
+            - name: RequestRateLimiter
+              args:
+                #令牌桶填充速率
+                redis-rate-limiter.replenishRate: 10
+                #令牌桶容量 即每秒最多通行5个
+                redis-rate-limiter.burstCapacity: 20
+                #使用 SpEL 表达式 对应 bean
+                key-resolver: '#{@ipKeyResolver}'
+        - id: default
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+
+ribbon:
+  ConnectTimeout: 1000 # 连接超时时间(ms)
+  ReadTimeout: 3500 # 通信超时时间(ms)，（ReadTimeout + ConnectTimeout）* 2 < hystrix
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 2 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: user
+        url: /v3/api-docs/user
+      - name: other
+        url: /v3/api-docs/other
+      - name: default
+        url: /v3/api-docs
