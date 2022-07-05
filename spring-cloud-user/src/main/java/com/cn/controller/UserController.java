@@ -1,20 +1,22 @@
 package com.cn.controller;
 
-import com.cn.pojo.RestCode;
 import com.cn.pojo.Result;
-import com.cn.entity.User;
 import com.cn.pojo.UserDO;
 import com.cn.pojo.UserDetail;
 import com.cn.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.ui.ModelMap;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.jwt.JwtClaimsSet;
+import org.springframework.security.oauth2.jwt.JwtEncoder;
+import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.time.Instant;
+import java.util.stream.Collectors;
 
 /**
  * @author chenning
@@ -27,7 +29,28 @@ import java.security.Principal;
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
+    private final JwtEncoder encoder;
     private final UserService userService;
+
+    @GetMapping("/token")
+    public String token(Authentication authentication) {
+        Instant now = Instant.now();
+        long expiry = 36000L;
+        // @formatter:off
+        String scope = authentication.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.joining(" "));
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .issuer("self")
+                .issuedAt(now)
+                .expiresAt(now.plusSeconds(expiry))
+                .subject(authentication.getName())
+                .claim("scope", scope)
+                .build();
+        // @formatter:on
+        return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+    }
+
 
     /**
      * 获取用户信息
@@ -43,19 +66,11 @@ public class UserController {
     /**
      * 获取当前用户凭证信息
      */
-    @RequestMapping("/principal")
+    @GetMapping("/principal")
     public Principal principal(Principal principal) {
         return principal;
     }
 
-    /**
-     * 销毁token
-     */
-    @RequestMapping(value = "/revoke")
-    public Result revoke(@RequestBody ModelMap modelMap) {
-        String access_token = modelMap.get("token").toString().substring("Bearer".length()).trim();
-        return Result.success();
-    }
 
     @GetMapping("/test")
     public Result test(){

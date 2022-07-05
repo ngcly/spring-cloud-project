@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Description 远程调用授权服务
  * @Date 2019/7/17 9:12
  */
-@FeignClient(name = "spring-cloud-user", fallback = UserClient.AuthClientFallback.class)
+@FeignClient(name = "user-service", fallback = UserClient.AuthClientFallback.class)
 public interface UserClient {
 
     @PostMapping("/oauth/token")
@@ -28,6 +28,9 @@ public interface UserClient {
 
     @GetMapping("/oauth/check_token")
     ResponseEntity<?> checkToken(@RequestParam("token") String token);
+
+    @GetMapping("/user/token")
+    ResponseEntity<String> getToken(@RequestParam("username") String username, @RequestParam("password") String password);
 
     @Service
     class AuthClientFallback implements UserClient {
@@ -44,6 +47,11 @@ public interface UserClient {
 
         @Override
         public ResponseEntity<?> checkToken(String token) {
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
+        }
+
+        @Override
+        public ResponseEntity<String> getToken(String username, String password) {
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
         }
     }

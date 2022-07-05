@@ -39,3 +39,17 @@ management:
 feign:
   hystrix:
     enabled: true
+
+jwt:
+  private.key: classpath:app.key
+  public.key: classpath:app.pub
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    oauth:
+      clientId: newClient
+      clientSecret: newClientSecret
+#  oAuthFlow:
+#    authorizationUrl: ${OAUTH2_SERVER:http://localhost:8083}/auth/realms/springdoc/protocol/openid-connect/auth
+#    tokenUrl: ${OAUTH2_SERVER:http://localhost:8083}/auth/realms/springdoc/protocol/openid-connect/token

@@ -18,9 +18,8 @@ public class LoginController {
     private final UserClient userClient;
 
     @PostMapping("/user/login")
-    public ResponseEntity login(@RequestBody ModelMap modelMap){
-        ResponseEntity<?> entity = userClient.getToken(modelMap.get("username").toString(),modelMap.get("password").toString(),
-                "all","password","cloud_client","secret");
+    public ResponseEntity<String> login(@RequestBody ModelMap modelMap){
+        ResponseEntity<String> entity = userClient.getToken(modelMap.get("username").toString(),modelMap.get("password").toString());
         return entity;
     }
 
